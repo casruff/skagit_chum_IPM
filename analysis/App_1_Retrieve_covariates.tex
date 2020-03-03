@@ -1,0 +1,778 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Appendix S1. Instructions for retrieving and archiving the environmental covariates.},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\DataTypeTok}[1]{#1}
+\newcommand{\DecValTok}[1]{#1}
+\newcommand{\BaseNTok}[1]{#1}
+\newcommand{\FloatTok}[1]{#1}
+\newcommand{\ConstantTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{#1}
+\newcommand{\VariableTok}[1]{#1}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\OperatorTok}[1]{#1}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{#1}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Appendix S1. Instructions for retrieving and archiving the environmental
+covariates.}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+\subtitle{Retrospective analysis of Skagit River Chum salmon productivity}
+  \author{}
+  \preauthor{}\postauthor{}
+  \date{}
+  \predate{}\postdate{}
+
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\vspace{0.2in}
+
+This is version 0.19.10.22.
+
+\section{Background}\label{background}
+
+This appendix describes how to retrieve the environmental covariates
+used in our analyses. After reading in the raw data, summarizing them
+(if necessary), and trimming them to the appropriate time frame, they
+table of covariates is written to a \texttt{.csv} file.
+
+All of the analyses require the \href{https://cran.r-project.org/}{R
+software} (v3.4.3 or later) for data retrieval and processing. We also
+need the \textbf{readr} and \textbf{here} packages, which are not
+included with the base installation of \textbf{R}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(}\StringTok{"readr"}\NormalTok{)) \{}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"readr"}\NormalTok{)}
+  \KeywordTok{library}\NormalTok{(}\StringTok{"readr"}\NormalTok{)}
+\NormalTok{\}}
+\ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(}\StringTok{"here"}\NormalTok{)) \{}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"here"}\NormalTok{)}
+  \KeywordTok{library}\NormalTok{(}\StringTok{"here"}\NormalTok{)}
+\NormalTok{\}}
+\NormalTok{## set data dir}
+\NormalTok{datadir <-}\StringTok{ }\KeywordTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{User inputs}\label{user-inputs}
+
+We begin by supplying values for the following parameters, which we use
+for trimming and lagging the covariates to the appropriate years.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## first & last years of fish data}
+\NormalTok{yr_frst <-}\StringTok{ }\DecValTok{1980}
+\NormalTok{yr_last <-}\StringTok{ }\DecValTok{2018}
+
+\NormalTok{## min & max adult ages (years)}
+\NormalTok{age_min <-}\StringTok{ }\DecValTok{3}
+\NormalTok{age_max <-}\StringTok{ }\DecValTok{5}
+
+\NormalTok{## time lags (years) for covariates}
+\NormalTok{flow_lag <-}\StringTok{ }\DecValTok{1}
+\NormalTok{marine_lag <-}\StringTok{ }\DecValTok{1}
+
+
+\NormalTok{## number of years for run forecasts}
+\NormalTok{n_fore <-}\StringTok{ }\DecValTok{0}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Retrieve covariates}\label{retrieve-covariates}
+
+Our analysis investigates 3 covariates as possible drivers of the
+population's instrinic growth rate:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Maximum river discharge in winter;
+\item
+  Minimum river discharge in summer;
+\item
+  North Pacific Gyre Oscillation;
+\item
+  Hatchery SAR
+\item
+  Whidbey basin pink salmon escapement
+\end{enumerate}
+
+\subsection{River discharge}\label{river-discharge}
+
+We begin by getting the daily flow data from the US Geological Service
+\href{http://waterdata.usgs.gov/nwis}{National Water Information
+System}. We will use the direct link to the gage data from the Skagit
+River near Mount Vernon, WA (\#12200500), beginning with the first year
+of fish data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## flow gage ID}
+\NormalTok{flow_site <-}\StringTok{ }\DecValTok{12200500}
+\NormalTok{## get URL for flow data from USGS}
+\NormalTok{flow_url <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\StringTok{"https://waterdata.usgs.gov/nwis/dv"}\NormalTok{,}
+                   \StringTok{"?cb_00060=on"}\NormalTok{,}
+                   \StringTok{"&format=rdb"}\NormalTok{,}
+                   \StringTok{"&site_no="}\NormalTok{,flow_site,}
+                   \StringTok{"&begin_date="}\NormalTok{,yr_frst,}\StringTok{"-01-01"}\NormalTok{,}
+                   \StringTok{"&end_date="}\NormalTok{,yr_last,}\StringTok{"-12-31"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Next we retrieve the raw data file and print its metadata.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## raw flow data from USGS}
+\NormalTok{flow_raw <-}\StringTok{ }\KeywordTok{read_lines}\NormalTok{(flow_url)}
+\NormalTok{## lines with metadata}
+\NormalTok{hdr_flow <-}\StringTok{ }\KeywordTok{which}\NormalTok{(}\KeywordTok{lapply}\NormalTok{(flow_raw, grep, }\DataTypeTok{pattern =} \StringTok{"}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{#"}\NormalTok{)}\OperatorTok{==}\DecValTok{1}\NormalTok{, }\DataTypeTok{arr.ind =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{## print flow metadata}
+\KeywordTok{print}\NormalTok{(flow_raw[hdr_flow], }\DataTypeTok{quote =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] # ---------------------------------- WARNING ----------------------------------------     
+##  [2] # Some of the data that you have obtained from this U.S. Geological Survey database       
+##  [3] # may not have received Director's approval. Any such data values are qualified           
+##  [4] # as provisional and are subject to revision. Provisional data are released on the        
+##  [5] # condition that neither the USGS nor the United States Government may be held liable     
+##  [6] # for any damages resulting from its use.                                                 
+##  [7] #                                                                                         
+##  [8] # Additional info: https://help.waterdata.usgs.gov/policies/provisional-data-statement    
+##  [9] #                                                                                         
+## [10] # File-format description:  https://help.waterdata.usgs.gov/faq/about-tab-delimited-output
+## [11] # Automated-retrieval info: https://help.waterdata.usgs.gov/faq/automated-retrievals      
+## [12] #                                                                                         
+## [13] # Contact:   gs-w_support_nwisweb@usgs.gov                                                
+## [14] # retrieved: 2019-07-31 16:34:58 EDT       (vaww02)                                       
+## [15] #                                                                                         
+## [16] # Data for the following 1 site(s) are contained in this file                             
+## [17] #    USGS 12200500 SKAGIT RIVER NEAR MOUNT VERNON, WA                                     
+## [18] # -----------------------------------------------------------------------------------     
+## [19] #                                                                                         
+## [20] # Data provided for site 12200500                                                         
+## [21] #            TS   parameter     statistic     Description                                 
+## [22] #        149429       00060     00003     Discharge, cubic feet per second (Mean)         
+## [23] #                                                                                         
+## [24] # Data-value qualification codes included in this output:                                 
+## [25] #     A  Approved for publication -- Processing and review completed.                     
+## [26] #     e  Value has been estimated.                                                        
+## [27] #
+\end{verbatim}
+
+Lastly, we extract the actual flow data for the years of interest and
+inspect the file contents.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## flow data for years of interest}
+\NormalTok{dat_flow <-}\StringTok{  }\KeywordTok{read_tsv}\NormalTok{(flow_url,}
+                      \DataTypeTok{col_names =} \OtherTok{FALSE}\NormalTok{,}
+                      \DataTypeTok{col_types =} \StringTok{"ciDdc"}\NormalTok{,}
+                      \DataTypeTok{skip =} \KeywordTok{max}\NormalTok{(hdr_flow)}\OperatorTok{+}\DecValTok{2}\NormalTok{)}
+\KeywordTok{colnames}\NormalTok{(dat_flow) <-}\StringTok{ }\KeywordTok{unlist}\NormalTok{(}\KeywordTok{strsplit}\NormalTok{(}\KeywordTok{tolower}\NormalTok{(flow_raw[}\KeywordTok{max}\NormalTok{(hdr_flow)}\OperatorTok{+}\DecValTok{1}\NormalTok{]),}
+                                      \DataTypeTok{split =} \StringTok{"}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{s+"}\NormalTok{))}
+\KeywordTok{head}\NormalTok{(dat_flow)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 5
+##   agency_cd  site_no   datetime `149429_00060_00003` `149429_00060_00003_cd`
+##       <chr>    <int>     <date>                <dbl>                   <chr>
+## 1      USGS 12200500 1980-01-01                16500                       A
+## 2      USGS 12200500 1980-01-02                16700                       A
+## 3      USGS 12200500 1980-01-03                17700                       A
+## 4      USGS 12200500 1980-01-04                16400                       A
+## 5      USGS 12200500 1980-01-05                15800                       A
+## 6      USGS 12200500 1980-01-06                15500                       A
+\end{verbatim}
+
+We only need the 3rd and 4th columns, which contain the date
+(\texttt{datetime}) and daily flow measurements
+(\texttt{149429\_00060\_00003}). We will rename them to \texttt{date}
+and \texttt{flow}, respectively, and convert the flow units from ``cubic
+feet per second'' to ``cubic meters per second''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## keep only relevant columns}
+\NormalTok{dat_flow <-}\StringTok{ }\NormalTok{dat_flow[}\KeywordTok{c}\NormalTok{(}\StringTok{"datetime"}\NormalTok{, }\KeywordTok{grep}\NormalTok{(}\StringTok{"[0-9]$"}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(dat_flow), }\DataTypeTok{value =} \OtherTok{TRUE}\NormalTok{))]}
+\NormalTok{## nicer column names}
+\KeywordTok{colnames}\NormalTok{(dat_flow) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"date"}\NormalTok{,}\StringTok{"flow"}\NormalTok{)}
+\NormalTok{## convert cubic feet to cubic meters}
+\NormalTok{dat_flow}\OperatorTok{$}\NormalTok{flow <-}\StringTok{ }\NormalTok{dat_flow}\OperatorTok{$}\NormalTok{flow }\OperatorTok{/}\StringTok{ }\FloatTok{35.3147}
+\NormalTok{## flow by year & month}
+\NormalTok{dat_flow}\OperatorTok{$}\NormalTok{year <-}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(}\KeywordTok{format}\NormalTok{(dat_flow}\OperatorTok{$}\NormalTok{date,}\StringTok{"%Y"}\NormalTok{))}
+\NormalTok{dat_flow}\OperatorTok{$}\NormalTok{month <-}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(}\KeywordTok{format}\NormalTok{(dat_flow}\OperatorTok{$}\NormalTok{date,}\StringTok{"%m"}\NormalTok{))}
+\NormalTok{dat_flow <-}\StringTok{ }\NormalTok{dat_flow[,}\KeywordTok{c}\NormalTok{(}\StringTok{"year"}\NormalTok{,}\StringTok{"month"}\NormalTok{,}\StringTok{"flow"}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Winter maximum}\label{winter-maximum}
+
+We are interested in the maximum of the daily peak flows from November
+through March during the first year that juveniles are rearing in
+streams. This means we need to combine flow values from the fall of year
+\(t\) with those in the winter and spring of year \(t+1\). We also need
+to shift the flow data forward by 1 year so they align with the juvenile
+life stage. Therefore, the flow time series will begin in 1980 and end
+in 2016.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## autumn flows in year t}
+\NormalTok{flow_aut <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(dat_flow, (month}\OperatorTok{>=}\DecValTok{11} \OperatorTok{&}\StringTok{ }\NormalTok{month}\OperatorTok{<=}\DecValTok{12}\NormalTok{)}
+                   \OperatorTok{&}\StringTok{ }\NormalTok{year }\OperatorTok{>=}\StringTok{ }\NormalTok{yr_frst }\OperatorTok{&}\StringTok{ }\NormalTok{year }\OperatorTok{<=}\StringTok{ }\NormalTok{yr_last}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore)}
+\NormalTok{## spring flows in year t+1}
+\NormalTok{flow_spr <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(dat_flow,}
+\NormalTok{                   (month}\OperatorTok{>=}\DecValTok{1} \OperatorTok{&}\StringTok{ }\NormalTok{month}\OperatorTok{<=}\DecValTok{3}\NormalTok{)}
+                   \OperatorTok{&}\StringTok{ }\NormalTok{year }\OperatorTok{>=}\StringTok{ }\NormalTok{yr_frst}\OperatorTok{+}\NormalTok{flow_lag}
+                   \OperatorTok{&}\StringTok{ }\NormalTok{year }\OperatorTok{<=}\StringTok{ }\NormalTok{yr_last}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore}\OperatorTok{+}\NormalTok{flow_lag)}
+\NormalTok{## change spr year index to match aut}
+\NormalTok{flow_spr[,}\StringTok{"year"}\NormalTok{] <-}\StringTok{ }\NormalTok{flow_spr[,}\StringTok{"year"}\NormalTok{] }\OperatorTok{-}\StringTok{ }\NormalTok{flow_lag}
+\NormalTok{## combined flows indexed to brood year & calculate max flow}
+\CommentTok{#dat_flow_wtr <- aggregate(flow ~ year, data = rbind(flow_aut,flow_spr), mean)}
+\NormalTok{dat_flow_wtr <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(flow }\OperatorTok{~}\StringTok{ }\NormalTok{year, }\DataTypeTok{data =} \KeywordTok{rbind}\NormalTok{(flow_aut,flow_spr), max)}
+\NormalTok{dat_flow_wtr[,}\StringTok{"flow"}\NormalTok{] <-}\StringTok{ }\KeywordTok{round}\NormalTok{(dat_flow_wtr[,}\StringTok{"flow"}\NormalTok{], }\DecValTok{1}\NormalTok{) }
+\NormalTok{## change year index to brood year}
+\NormalTok{dat_flow_wtr[,}\StringTok{"year"}\NormalTok{] <-}\StringTok{ }\NormalTok{dat_flow_wtr[,}\StringTok{"year"}\NormalTok{] }
+\NormalTok{## for plotting purpose later}
+\KeywordTok{colnames}\NormalTok{(dat_flow_wtr)[}\DecValTok{2}\NormalTok{] <-}\StringTok{ "flow_wtr"}
+\KeywordTok{print}\NormalTok{(dat_flow_wtr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    year flow_wtr
+## 1  1980   2860.0
+## 2  1981   1526.3
+## 3  1982   1789.6
+## 4  1983   2302.2
+## 5  1984    775.9
+## 6  1985   1795.3
+## 7  1986   1843.4
+## 8  1987    909.0
+## 9  1988   1336.6
+## 10 1989   2497.5
+## 11 1990   4021.0
+## 12 1991   1135.5
+## 13 1992    781.5
+## 14 1993   1030.7
+## 15 1994   1577.2
+## 16 1995   3737.8
+## 17 1996   2089.8
+## 18 1997   1008.1
+## 19 1998   1469.6
+## 20 1999   2174.7
+## 21 2000    546.5
+## 22 2001   2086.9
+## 23 2002   1500.8
+## 24 2003   1826.4
+## 25 2004   1891.6
+## 26 2005   1625.4
+## 27 2006   3539.6
+## 28 2007   2019.0
+## 29 2008   2064.3
+## 30 2009   1868.9
+## 31 2010   2364.5
+## 32 2011   1619.7
+## 33 2012   1141.2
+## 34 2013   1381.9
+## 35 2014   2418.3
+## 36 2015   2070.0
+\end{verbatim}
+
+\subsubsection{Spring max}\label{spring-max}
+
+Retrieving the flow juveniles would experience during their first spring
+and early summer rearing in Skagit Bay (April through June) is
+straightforward.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## spring flows in year t}
+\NormalTok{flow_spr<-}\StringTok{ }\KeywordTok{subset}\NormalTok{(dat_flow, (month}\OperatorTok{>=}\DecValTok{3} \OperatorTok{&}\StringTok{ }\NormalTok{month}\OperatorTok{<=}\DecValTok{6}\NormalTok{)}
+                   \OperatorTok{&}\StringTok{ }\NormalTok{year }\OperatorTok{>=}\StringTok{ }\NormalTok{yr_frst}\OperatorTok{+}\NormalTok{flow_lag}
+                   \OperatorTok{&}\StringTok{ }\NormalTok{year }\OperatorTok{<=}\StringTok{ }\NormalTok{yr_last}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore}\OperatorTok{+}\NormalTok{flow_lag)}
+\NormalTok{## change year index to brood year}
+\NormalTok{flow_spr[,}\StringTok{"year"}\NormalTok{] <-}\StringTok{ }\NormalTok{flow_spr[,}\StringTok{"year"}\NormalTok{] }\OperatorTok{-}\StringTok{ }\NormalTok{flow_lag}
+\NormalTok{## combined flows indexed to brood year & calculate average flow}
+\NormalTok{dat_flow_spr <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(flow }\OperatorTok{~}\StringTok{ }\NormalTok{year, }\DataTypeTok{data =}\NormalTok{ flow_spr, max)}
+\NormalTok{dat_flow_spr <-}\StringTok{ }\KeywordTok{round}\NormalTok{(dat_flow_spr, }\DecValTok{2}\NormalTok{)}
+\NormalTok{## for plotting purpose later}
+\KeywordTok{colnames}\NormalTok{(dat_flow_spr)[}\DecValTok{2}\NormalTok{] <-}\StringTok{ "flow_spr"}
+\KeywordTok{print}\NormalTok{(dat_flow_spr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    year flow_spr
+## 1  1980   917.46
+## 2  1981  1347.88
+## 3  1982   846.67
+## 4  1983   923.13
+## 5  1984  1175.15
+## 6  1985  1030.73
+## 7  1986  1118.51
+## 8  1987  1095.86
+## 9  1988   846.67
+## 10 1989   841.01
+## 11 1990   869.33
+## 12 1991  1160.99
+## 13 1992  1022.24
+## 14 1993  1030.73
+## 15 1994   736.24
+## 16 1995   906.14
+## 17 1996  2089.78
+## 18 1997   682.44
+## 19 1998  1197.80
+## 20 1999  1033.56
+## 21 2000   744.73
+## 22 2001  1452.65
+## 23 2002  1279.92
+## 24 2003   753.23
+## 25 2004   569.17
+## 26 2005  1095.86
+## 27 2006  2101.11
+## 28 2007  1735.82
+## 29 2008   886.32
+## 30 2009   843.84
+## 31 2010  1177.98
+## 32 2011  1628.22
+## 33 2012  1325.23
+## 34 2013  1381.86
+## 35 2014   673.94
+## 36 2015   761.72
+\end{verbatim}
+
+\subsection{North Pacific Gyre
+Oscillation}\label{north-pacific-gyre-oscillation}
+
+We used the monthly NPGO data provided by Emanuele Di Lorenzo of the
+Georgia Institute of Technology, which are available
+\href{http://www.o3d.org/npgo/npgo.php}{here}. We begin by downloading
+the raw NPGO data and viewing the metadata.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## URL for NPGO data}
+\NormalTok{url_NPGO <-}\StringTok{ "http://www.o3d.org/npgo/npgo.php"}
+\NormalTok{## raw NPGO data }
+\NormalTok{NPGO_raw <-}\StringTok{ }\KeywordTok{read_lines}\NormalTok{(url_NPGO)}
+\NormalTok{## line with data headers}
+\NormalTok{hdr_NPGO <-}\StringTok{ }\KeywordTok{which}\NormalTok{(}\KeywordTok{lapply}\NormalTok{(NPGO_raw,grep,}\DataTypeTok{pattern=}\StringTok{"YEAR"}\NormalTok{)}\OperatorTok{==}\DecValTok{1}\NormalTok{, }\DataTypeTok{arr.ind =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{## print PDO metadata}
+\KeywordTok{print}\NormalTok{(NPGO_raw[}\KeywordTok{seq}\NormalTok{(hdr_NPGO)],}\DataTypeTok{quote =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]                                                                                                     
+##  [2] <html>                                                                                              
+##  [3] <body>                                                                                              
+##  [4]                                                                                                     
+##  [5] <pre>#  Last update 17-Jul-2019 by E. Di Lorenzo                                                    
+##  [6] #  NPGO index monthly averages                                                                      
+##  [7] #  from Jan-1950  to  Jul-2019                                                                      
+##  [8] #                                                                                                   
+##  [9] #  WARNING: Values after Dec-2004 are updated                                                       
+## [10] #  using Satellite SSHa from AVISO Delayed Time product.                                            
+## [11] #  http://opendap.aviso.oceanobs.com/thredds/dodsC/dataset-duacs-dt-global-allsat-msla-h            
+## [12] #                                                                                                   
+## [13] #  PRELIMINARY: Values after Jan-2019 are preliminary and updated                                   
+## [14] #  using Satellite SSHa from AVISO Near Real Time product.                                          
+## [15] #  http://opendap.aviso.oceanobs.com/thredds/dodsC/dataset-duacs-nrt-over30d-global-allsat-msla-h   
+## [16] #                                                                                                   
+## [17] #  The update is performed by taking the NPGO spatial pattern of Di Lorenzo et al. 2008             
+## [18] #  computed over the period 1950-2004, and projecting the AVISO Satellite SSHa.                     
+## [19] #  During the pre-processing of the AVISO data, we remove the seasonal cycle based on               
+## [20] #  the 1993-2004 seasonal means.                                                                    
+## [21] #                                                                                                   
+## [22] #  AVISO PRODUCT UPDATE Summer 2014: AVISO has released a re-processed dataset for the sea level.   
+## [23] #  Starting from the November 2014, the NPGO index is computed with this updated dataset. NPGO      
+## [24] #  values from 2004 onward have been recomputed with very minor differences from previous releases. 
+## [25] #                                                                                                   
+## [26] #  Ref:                                                                                             
+## [27] #  Di Lorenzo et al., 2008: North Pacific Gyre Oscillation                                          
+## [28] #  links ocean climate and ecosystem change, GRL.                                                   
+## [29] #                                                                                                   
+## [30] #      YEAR            MONTH        NPGO index
+\end{verbatim}
+
+Next, we extract the actual NPGO indices for the years of interest and
+inspect the file contents. We also want the average NPGO annual index
+from January 1 through December 31 during the first year that the
+juvenile steelhead are in the ocean (i.e., during their second year of
+life). Therefore, we need NPGO values from
+\texttt{yr\_frst\ +\ marine\_lag\ ==\ 1981} through
+\texttt{yr\_last\ -\ age\_min\ +\ n\_fore\ +\ marine\_lag\ ==\ 2016}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## number of years of data}
+\NormalTok{n_yrs <-}\StringTok{ }\NormalTok{yr_last }\OperatorTok{-}\StringTok{ }\NormalTok{yr_frst }\OperatorTok{+}\StringTok{ }\DecValTok{1}
+\NormalTok{## NPGO data for years of interest}
+\NormalTok{dat_NPGO <-}\StringTok{ }\KeywordTok{read_table}\NormalTok{(url_NPGO, }\DataTypeTok{col_names =} \OtherTok{FALSE}\NormalTok{,}
+                       \DataTypeTok{skip =}\NormalTok{ hdr_NPGO }\OperatorTok{+}\StringTok{ }\NormalTok{(yr_frst}\OperatorTok{-}\DecValTok{1950}\NormalTok{)}\OperatorTok{*}\DecValTok{12}\NormalTok{,}
+                       \DataTypeTok{n_max =}\NormalTok{ (n_yrs}\OperatorTok{-}\DecValTok{1}\NormalTok{)}\OperatorTok{*}\DecValTok{12}\NormalTok{)}
+\KeywordTok{colnames}\NormalTok{(dat_NPGO) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"year"}\NormalTok{,}\StringTok{"month"}\NormalTok{,}\StringTok{"NPGO"}\NormalTok{)}
+\NormalTok{## select only years of interest indexed by brood year }
+\NormalTok{dat_NPGO_wtr <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(dat_NPGO, (month }\OperatorTok{==}\StringTok{ }\DecValTok{12}\NormalTok{)}
+                   \OperatorTok{&}\StringTok{ }\NormalTok{year }\OperatorTok{>=}\StringTok{ }\NormalTok{yr_frst}
+                   \OperatorTok{&}\StringTok{ }\NormalTok{year }\OperatorTok{<=}\StringTok{ }\NormalTok{yr_last}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore)}
+
+\NormalTok{dat_NPGO_spr <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(dat_NPGO, (month }\OperatorTok{>=}\StringTok{ }\DecValTok{1} \OperatorTok{&}\StringTok{ }\NormalTok{month }\OperatorTok{<=}\StringTok{ }\DecValTok{3}\NormalTok{)}
+                   \OperatorTok{&}\StringTok{ }\NormalTok{year }\OperatorTok{>=}\StringTok{ }\NormalTok{yr_frst}\OperatorTok{+}\NormalTok{marine_lag}
+                   \OperatorTok{&}\StringTok{ }\NormalTok{year }\OperatorTok{<=}\StringTok{ }\NormalTok{yr_last}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore}\OperatorTok{+}\NormalTok{marine_lag)}
+
+\NormalTok{## change spr year index to match wtr}
+\NormalTok{dat_NPGO_spr[,}\StringTok{"year"}\NormalTok{] <-}\StringTok{ }\NormalTok{dat_NPGO_spr[,}\StringTok{"year"}\NormalTok{] }\OperatorTok{-}\StringTok{ }\NormalTok{marine_lag}
+
+\NormalTok{## combined NPGO indexed to brood year & calculate december - March average}
+\NormalTok{dat_NPGO <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(NPGO}\OperatorTok{~}\NormalTok{year, }\DataTypeTok{data =} \KeywordTok{rbind}\NormalTok{(dat_NPGO_wtr,dat_NPGO_spr), mean)}
+\NormalTok{dat_NPGO <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{year =} \KeywordTok{seq}\NormalTok{(yr_frst,yr_last}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore),}
+                       \DataTypeTok{NPGO =}\NormalTok{ dat_NPGO[,}\DecValTok{2}\NormalTok{])}
+\NormalTok{dat_NPGO[,}\StringTok{"NPGO"}\NormalTok{] <-}\StringTok{ }\KeywordTok{round}\NormalTok{(dat_NPGO[,}\StringTok{"NPGO"}\NormalTok{], }\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Hatchery Smolt to adult survival
+rates}\label{hatchery-smolt-to-adult-survival-rates}
+
+We used a time series of marine survival of hatchery Chum salmon from
+the Tulalip Hatchery as an indicator of marine survival for conspecific
+wild Chum salmon from the Skagit River.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dat_SAR <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(datadir,}\StringTok{"ps_hatchery_chum_return_rates.csv"}\NormalTok{))}
+\NormalTok{dat_SAR <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(dat_SAR, year }\OperatorTok{>=}\StringTok{ }\NormalTok{yr_frst}
+                   \OperatorTok{&}\StringTok{ }\NormalTok{year }\OperatorTok{<=}\StringTok{ }\NormalTok{yr_last}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore)}
+
+\NormalTok{dat_SAR <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(dat_SAR)}
+
+\NormalTok{dat_SAR <-}\StringTok{ }\NormalTok{dat_SAR[,}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{)]}
+\KeywordTok{print}\NormalTok{(dat_SAR)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    year    Tulalip
+## 1  1980  3.3879987
+## 2  1981  5.6751522
+## 3  1982 14.4417349
+## 4  1983  2.1223123
+## 5  1984 11.0153670
+## 6  1985  8.7570109
+## 7  1986 10.4798662
+## 8  1987  4.0466845
+## 9  1988  3.0621649
+## 10 1989  2.2609455
+## 11 1990  9.9789032
+## 12 1991  1.3910264
+## 13 1992  3.6152615
+## 14 1993  2.2592288
+## 15 1994  2.2719406
+## 16 1995  4.4830040
+## 17 1996  1.1566535
+## 18 1997  5.3983225
+## 19 1998 14.6207124
+## 20 1999  6.7131602
+## 21 2000  3.7462885
+## 22 2001  5.1323788
+## 23 2002  2.6584741
+## 24 2003  2.7421580
+## 25 2004  6.6129158
+## 26 2005  3.7972014
+## 27 2006  2.0014710
+## 28 2007  3.5351005
+## 29 2008  0.6264500
+## 30 2009  4.0434074
+## 31 2010  1.7306812
+## 32 2011  0.3638305
+\end{verbatim}
+
+\subsection{Pink salmon escapement}\label{pink-salmon-escapement}
+
+We used pink salmon escapement as a covariate in the model. The
+plausible hypothesis is that pink salmon fry compete with Chum fry for
+food and space and therefore may reduce the overall prodcutivity of Chum
+salmon.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dat_pink_esc <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(datadir,}\StringTok{"skagit_pink_esc.csv"}\NormalTok{))}
+\NormalTok{dat_pink_esc <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(dat_pink_esc, year }\OperatorTok{>=}\StringTok{ }\NormalTok{yr_frst}
+                   \OperatorTok{&}\StringTok{ }\NormalTok{year }\OperatorTok{<=}\StringTok{ }\NormalTok{yr_last}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore)}
+\NormalTok{dat_pink_esc <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(dat_pink_esc[,}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{)])}
+
+\KeywordTok{print}\NormalTok{(dat_pink_esc)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    year whidbey_basin_pink_escapement
+## 1  1980                             0
+## 2  1981                        208728
+## 3  1982                             0
+## 4  1983                        794922
+## 5  1984                             0
+## 6  1985                       1212444
+## 7  1986                             0
+## 8  1987                        866906
+## 9  1988                             0
+## 10 1989                        551870
+## 11 1990                             0
+## 12 1991                        611447
+## 13 1992                             0
+## 14 1993                        740135
+## 15 1994                             0
+## 16 1995                       1166626
+## 17 1996                             0
+## 18 1997                        252109
+## 19 1998                             0
+## 20 1999                        781543
+## 21 2000                             0
+## 22 2001                       2741709
+## 23 2002                             0
+## 24 2003                       2144081
+## 25 2004                             0
+## 26 2005                        660124
+## 27 2006                             0
+## 28 2007                       1683591
+## 29 2008                             0
+## 30 2009                       3992373
+## 31 2010                             0
+## 32 2011                       1172903
+## 33 2012                             0
+## 34 2013                       3053569
+## 35 2014                             0
+## 36 2015                        770674
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dat_pink_esc <-}\StringTok{ }\NormalTok{dat_pink_esc[}\KeywordTok{which}\NormalTok{(dat_pink_esc}\OperatorTok{$}\NormalTok{year }\OperatorTok{%in%}\StringTok{ }\KeywordTok{seq}\NormalTok{(yr_frst,yr_last,}\DecValTok{1}\NormalTok{)),]}
+\KeywordTok{print}\NormalTok{(dat_pink_esc)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    year whidbey_basin_pink_escapement
+## 1  1980                             0
+## 2  1981                        208728
+## 3  1982                             0
+## 4  1983                        794922
+## 5  1984                             0
+## 6  1985                       1212444
+## 7  1986                             0
+## 8  1987                        866906
+## 9  1988                             0
+## 10 1989                        551870
+## 11 1990                             0
+## 12 1991                        611447
+## 13 1992                             0
+## 14 1993                        740135
+## 15 1994                             0
+## 16 1995                       1166626
+## 17 1996                             0
+## 18 1997                        252109
+## 19 1998                             0
+## 20 1999                        781543
+## 21 2000                             0
+## 22 2001                       2741709
+## 23 2002                             0
+## 24 2003                       2144081
+## 25 2004                             0
+## 26 2005                        660124
+## 27 2006                             0
+## 28 2007                       1683591
+## 29 2008                             0
+## 30 2009                       3992373
+## 31 2010                             0
+## 32 2011                       1172903
+## 33 2012                             0
+## 34 2013                       3053569
+## 35 2014                             0
+## 36 2015                        770674
+\end{verbatim}
+
+\section{Archive covariates}\label{archive-covariates}
+
+The last thing we will do is combine the covariates into one data frame
+and write them to a file for use in the analysis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#print(dat_flow_wtr)}
+\CommentTok{#print(dat_flow_spr)}
+\NormalTok{## combine covariates}
+\NormalTok{dat_cvrs <-}\StringTok{ }\KeywordTok{Reduce}\NormalTok{(}\ControlFlowTok{function}\NormalTok{(...) }\KeywordTok{merge}\NormalTok{(..., }\DataTypeTok{all =} \OtherTok{TRUE}\NormalTok{),}
+                   \KeywordTok{list}\NormalTok{(dat_flow_wtr,}
+\NormalTok{                        dat_flow_spr,dat_NPGO,}
+\NormalTok{                        dat_pink_esc))}
+
+\NormalTok{## check table of covariates}
+\KeywordTok{print}\NormalTok{(dat_cvrs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    year flow_wtr flow_spr  NPGO whidbey_basin_pink_escapement
+## 1  1980   2860.0   917.46 -0.57                             0
+## 2  1981   1526.3  1347.88 -0.29                        208728
+## 3  1982   1789.6   846.67  0.32                             0
+## 4  1983   2302.2   923.13  0.06                        794922
+## 5  1984    775.9  1175.15  0.19                             0
+## 6  1985   1795.3  1030.73 -1.09                       1212444
+## 7  1986   1843.4  1118.51  0.32                             0
+## 8  1987    909.0  1095.86  0.89                        866906
+## 9  1988   1336.6   846.67  0.91                             0
+## 10 1989   2497.5   841.01  0.12                        551870
+## 11 1990   4021.0   869.33 -0.85                             0
+## 12 1991   1135.5  1160.99 -0.25                        611447
+## 13 1992    781.5  1022.24 -2.14                             0
+## 14 1993   1030.7  1030.73 -1.92                        740135
+## 15 1994   1577.2   736.24 -1.28                             0
+## 16 1995   3737.8   906.14 -0.66                       1166626
+## 17 1996   2089.8  2089.78 -1.18                             0
+## 18 1997   1008.1   682.44  0.90                        252109
+## 19 1998   1469.6  1197.80  1.53                             0
+## 20 1999   2174.7  1033.56  1.68                        781543
+## 21 2000    546.5   744.73  2.59                             0
+## 22 2001   2086.9  1452.65  1.99                       2741709
+## 23 2002   1500.8  1279.92  1.77                             0
+## 24 2003   1826.4   753.23  0.38                       2144081
+## 25 2004   1891.6   569.17 -1.41                             0
+## 26 2005   1625.4  1095.86 -0.92                        660124
+## 27 2006   3539.6  2101.11 -0.31                             0
+## 28 2007   2019.0  1735.82  0.88                       1683591
+## 29 2008   2064.3   886.32  0.60                             0
+## 30 2009   1868.9   843.84  1.66                       3992373
+## 31 2010   2364.5  1177.98  0.71                             0
+## 32 2011   1619.7  1628.22  0.74                       1172903
+## 33 2012   1141.2  1325.23  1.07                             0
+## 34 2013   1381.9  1381.86 -0.64                       3053569
+## 35 2014   2418.3   673.94 -0.89                             0
+## 36 2015   2070.0   761.72  0.13                        770674
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## write covariates to a file}
+\KeywordTok{write_csv}\NormalTok{(dat_cvrs, }\KeywordTok{file.path}\NormalTok{(datadir, }\StringTok{"skagit_chum_covars.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}

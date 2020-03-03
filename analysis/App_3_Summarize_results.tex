@@ -1,0 +1,1068 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Appendix S3. Steps to recreate figures from main text.},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\DataTypeTok}[1]{#1}
+\newcommand{\DecValTok}[1]{#1}
+\newcommand{\BaseNTok}[1]{#1}
+\newcommand{\FloatTok}[1]{#1}
+\newcommand{\ConstantTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{#1}
+\newcommand{\VariableTok}[1]{#1}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\OperatorTok}[1]{#1}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{#1}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Appendix S3. Steps to recreate figures from main text.}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+\subtitle{Supporting information for Scheuerell et al.}
+  \author{}
+  \preauthor{}\postauthor{}
+  \date{}
+  \predate{}\postdate{}
+
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\vspace{0.2in}
+
+This is version 0.19.12.02.
+
+\section{Background}\label{background}
+
+This appendix shows how to recreate the figures in the main text based
+on the results from the best of the fitted models. All analyses require
+the \href{https://cran.r-project.org/}{R software} (v3.5 or later), as
+well as a few packages that are not included with the base installation
+of R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(}\StringTok{"readr"}\NormalTok{)) \{}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"readr"}\NormalTok{)}
+  \KeywordTok{library}\NormalTok{(}\StringTok{"readr"}\NormalTok{)}
+\NormalTok{\}}
+\ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(}\StringTok{"captioner"}\NormalTok{)) \{}
+\NormalTok{  devtools}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"adletaw/captioner"}\NormalTok{)}
+  \KeywordTok{library}\NormalTok{(}\StringTok{"captioner"}\NormalTok{)}
+\NormalTok{\}}
+\ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(}\StringTok{"coda"}\NormalTok{)) \{}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"coda"}\NormalTok{)}
+  \KeywordTok{library}\NormalTok{(}\StringTok{"coda"}\NormalTok{)}
+\NormalTok{\}}
+\ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(}\StringTok{"here"}\NormalTok{)) \{}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"here"}\NormalTok{)}
+  \KeywordTok{library}\NormalTok{(}\StringTok{"here"}\NormalTok{)}
+\NormalTok{\}}
+\ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(}\StringTok{"gsl"}\NormalTok{)) \{}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"gsl"}\NormalTok{)}
+  \KeywordTok{library}\NormalTok{(}\StringTok{"gsl"}\NormalTok{)}
+\NormalTok{\}}
+
+\ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{require}\NormalTok{(}\StringTok{"gtools"}\NormalTok{)) \{}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"gtools"}\NormalTok{)}
+  \KeywordTok{library}\NormalTok{(}\StringTok{"gtools"}\NormalTok{)}
+\NormalTok{\}}
+
+
+\NormalTok{## set default caption delimter}
+\NormalTok{fig_cap <-}\StringTok{ }\KeywordTok{captioner}\NormalTok{(}\DataTypeTok{suffix =} \StringTok{"."}\NormalTok{)}
+
+\NormalTok{## set directory locations}
+\NormalTok{datadir <-}\StringTok{ }\KeywordTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{)}
+\NormalTok{analdir <-}\StringTok{ }\KeywordTok{here}\NormalTok{(}\StringTok{"analysis"}\NormalTok{)}
+\NormalTok{savedir <-}\StringTok{ }\KeywordTok{here}\NormalTok{(}\StringTok{"analysis/cache"}\NormalTok{)}
+
+\NormalTok{## better round/floor/ceiling}
+\NormalTok{around <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x, }\DataTypeTok{func =} \StringTok{"round"}\NormalTok{, }\DataTypeTok{prec =} \DecValTok{1}\NormalTok{) \{}
+\NormalTok{  ## `func` can be "round", "floor", or "ceiling"}
+\NormalTok{  ## `prec` is desired precision (eg, 0.1 is to nearest tenth)}
+  \ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.double}\NormalTok{(x)) \{}
+    \KeywordTok{stop}\NormalTok{(}\StringTok{"`x` must be a real number"}\NormalTok{)}
+\NormalTok{  \}}
+  \ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\NormalTok{(func }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"round"}\NormalTok{, }\StringTok{"floor"}\NormalTok{, }\StringTok{"ceiling"}\NormalTok{))) \{}
+    \KeywordTok{stop}\NormalTok{(}\StringTok{"`func` must be }\CharTok{\textbackslash{}"}\StringTok{round}\CharTok{\textbackslash{}"}\StringTok{, }\CharTok{\textbackslash{}"}\StringTok{floor}\CharTok{\textbackslash{}"}\StringTok{, or }\CharTok{\textbackslash{}"}\StringTok{ceiling}\CharTok{\textbackslash{}"}\StringTok{"}\NormalTok{)}
+\NormalTok{  \}}
+  \ControlFlowTok{if}\NormalTok{(prec }\OperatorTok{<=}\StringTok{ }\DecValTok{0}\NormalTok{) \{}
+    \KeywordTok{stop}\NormalTok{(}\StringTok{"`prec` cannot be less than or equal to 0"}\NormalTok{)}
+\NormalTok{  \}}
+  \KeywordTok{do.call}\NormalTok{(func, }\KeywordTok{list}\NormalTok{(x }\OperatorTok{/}\StringTok{ }\NormalTok{prec)) }\OperatorTok{*}\StringTok{ }\NormalTok{prec}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+The last thing we'll need is the following function for trimming real
+numbers to a desired precision when plotting output.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Re2prec <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x,}\DataTypeTok{map=}\StringTok{"round"}\NormalTok{,}\DataTypeTok{prec=}\DecValTok{1}\NormalTok{) \{}
+\NormalTok{  ## 'map' can be round, floor, or ceiling}
+\NormalTok{  ## 'prec' is nearest value (eg, 0.1 means to nearest tenth); default 1 gives normal behavior}
+  \ControlFlowTok{if}\NormalTok{(prec}\OperatorTok{<=}\DecValTok{0}\NormalTok{) \{ }\KeywordTok{stop}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}"}\StringTok{prec}\CharTok{\textbackslash{}"}\StringTok{ cannot be less than or equal to 0"}\NormalTok{) \}}
+  \KeywordTok{do.call}\NormalTok{(map,}\KeywordTok{list}\NormalTok{(x}\OperatorTok{/}\NormalTok{prec))}\OperatorTok{*}\NormalTok{prec}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Load the information}\label{load-the-information}
+
+Here we load in the estimated parameters and states from the selected
+model, as well as the covariates and harvest data and escapement data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{best_fit <-}\StringTok{ }\KeywordTok{readRDS}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(savedir,}\StringTok{"fit_bh_cov_flow_wtr+flow_spr+NPGO+whidbey_basin_pink_escapement.rds"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## covariate(s)}
+\NormalTok{dat_cvrs <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(datadir, }\StringTok{"skagit_chum_covars.csv"}\NormalTok{))}
+\NormalTok{## total number of covariates}
+\NormalTok{n_cov <-}\StringTok{ }\KeywordTok{dim}\NormalTok{(dat_cvrs)[}\DecValTok{2}\NormalTok{] }\OperatorTok{-}\StringTok{ }\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## escapement}
+\NormalTok{dat_esc <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(datadir, }\StringTok{"skagit_chum_esc.csv"}\NormalTok{))}
+\NormalTok{dat_esc <-}\StringTok{ }\NormalTok{dat_esc[}\KeywordTok{which}\NormalTok{(dat_esc}\OperatorTok{$}\NormalTok{year }\OperatorTok{%in%}\StringTok{ }\KeywordTok{seq}\NormalTok{(yr_frst,yr_last,}\DecValTok{1}\NormalTok{)),]}
+
+\NormalTok{## log of escapement}
+\NormalTok{ln_dat_esc <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{log}\NormalTok{(dat_esc}\OperatorTok{$}\NormalTok{escapement), }\KeywordTok{rep}\NormalTok{(}\OtherTok{NA}\NormalTok{, n_fore))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## harvest}
+\NormalTok{dat_harv <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(datadir, }\StringTok{"skagit_chum_catch.csv"}\NormalTok{))}
+\NormalTok{dat_harv <-}\StringTok{ }\NormalTok{dat_harv[}\KeywordTok{which}\NormalTok{(dat_harv}\OperatorTok{$}\NormalTok{year }\OperatorTok{%in%}\StringTok{ }\KeywordTok{seq}\NormalTok{(yr_frst,yr_last,}\DecValTok{1}\NormalTok{) ),]}
+
+\NormalTok{## drop year col & first age_max rows}
+\NormalTok{dat_harv <-}\StringTok{ }\KeywordTok{c}\NormalTok{(dat_harv}\OperatorTok{$}\NormalTok{catch, }\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, n_fore))}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Model forms}\label{model-forms}
+
+Here are the model parameters we used for the schematics of the
+deterministic forms for the Ricker and Beverton-Holt models.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## params}
+\NormalTok{## Ricker}
+\NormalTok{ra <-}\StringTok{ }\DecValTok{3}
+\NormalTok{rb <-}\StringTok{ }\FloatTok{1.2e-4}
+\NormalTok{## B-H}
+\NormalTok{ba <-}\StringTok{ }\DecValTok{3}
+\NormalTok{bb <-}\StringTok{ }\DecValTok{3}\OperatorTok{/}\FloatTok{1.4e4}
+
+\NormalTok{## ref pts}
+\NormalTok{## Ricker}
+\NormalTok{rmr <-}\StringTok{ }\NormalTok{ra}\OperatorTok{/}\NormalTok{rb}\OperatorTok{*}\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{)}
+\NormalTok{rsy <-}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\KeywordTok{lambert_W0}\NormalTok{(}\KeywordTok{exp}\NormalTok{(}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{ra)) }\OperatorTok{/}\StringTok{ }\NormalTok{rb}
+\NormalTok{ruy <-}\StringTok{ }\DecValTok{1} \OperatorTok{-}\StringTok{ }\KeywordTok{lambert_W0}\NormalTok{(}\KeywordTok{exp}\NormalTok{(}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{ra)}
+\NormalTok{## B-H}
+\NormalTok{bmr <-}\StringTok{ }\NormalTok{ba}\OperatorTok{/}\NormalTok{bb}
+\NormalTok{bsy <-}\StringTok{ }\NormalTok{(ba}\OperatorTok{/}\NormalTok{bb)}\OperatorTok{*}\KeywordTok{sqrt}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\NormalTok{ba)}\OperatorTok{-}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\NormalTok{bb)}
+\NormalTok{bsy <-}\StringTok{ }\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(ba)}\OperatorTok{-}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{bb}
+\NormalTok{buy <-}\StringTok{ }\DecValTok{1} \OperatorTok{-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\NormalTok{ba)}
+
+\NormalTok{## S-R curves}
+\NormalTok{## spawners}
+\NormalTok{ss <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{1.2e4}\NormalTok{,}\DecValTok{10}\NormalTok{)}
+\NormalTok{## recuits (Ricker)}
+\NormalTok{rr <-}\StringTok{ }\NormalTok{ra}\OperatorTok{*}\NormalTok{ss}\OperatorTok{/}\KeywordTok{exp}\NormalTok{(rb}\OperatorTok{*}\NormalTok{ss)}
+\NormalTok{## recruits (B-H)}
+\NormalTok{br <-}\StringTok{ }\NormalTok{ba}\OperatorTok{*}\NormalTok{ss}\OperatorTok{/}\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{bb}\OperatorTok{*}\NormalTok{ss)}
+\end{Highlighting}
+\end{Shaded}
+
+Here is the code to recreate the schematics in Figure 1.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{layout}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{2}\NormalTok{),}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+       \DataTypeTok{heights=}\KeywordTok{lcm}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\FloatTok{0.3}\NormalTok{,}\DecValTok{3}\NormalTok{)}\OperatorTok{*}\FloatTok{2.54}\NormalTok{),}
+       \DataTypeTok{widths=}\KeywordTok{lcm}\NormalTok{(}\DecValTok{3}\OperatorTok{*}\FloatTok{2.54}\NormalTok{))}
+
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mai=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.4}\NormalTok{,}\FloatTok{0.4}\NormalTok{,}\FloatTok{0.2}\NormalTok{,}\FloatTok{0.2}\NormalTok{), }\DataTypeTok{omi=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\FloatTok{0.25}\NormalTok{))}
+
+\NormalTok{## Ricker}
+\KeywordTok{plot}\NormalTok{(ss, rr, }\DataTypeTok{type=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{xlim=}\KeywordTok{range}\NormalTok{(ss), }\DataTypeTok{ylim=}\KeywordTok{range}\NormalTok{(ss), }\DataTypeTok{xaxs=}\StringTok{"i"}\NormalTok{, }\DataTypeTok{yaxs=}\StringTok{"i"}\NormalTok{,}
+     \DataTypeTok{xlab=}\StringTok{""}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{""}\NormalTok{, }\DataTypeTok{xaxt=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{yaxt=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{bty=}\StringTok{"L"}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\KeywordTok{expression}\NormalTok{(}\KeywordTok{italic}\NormalTok{(S[t])), }\DecValTok{1}\NormalTok{, }\DataTypeTok{line=}\DecValTok{1}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{1.1}\NormalTok{, }\DataTypeTok{at=}\KeywordTok{max}\NormalTok{(ss))}
+\KeywordTok{mtext}\NormalTok{(}\KeywordTok{expression}\NormalTok{(}\KeywordTok{italic}\NormalTok{(R[t])), }\DecValTok{2}\NormalTok{, }\DataTypeTok{line=}\FloatTok{0.5}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{1.1}\NormalTok{, }\DataTypeTok{at=}\KeywordTok{max}\NormalTok{(ss), }\DataTypeTok{las=}\DecValTok{1}\NormalTok{)}
+\NormalTok{rttl <-}\StringTok{ "(a) Ricker"}
+\KeywordTok{text}\NormalTok{(}\DecValTok{400}\NormalTok{, }\KeywordTok{max}\NormalTok{(ss), rttl, }\DataTypeTok{cex=}\FloatTok{1.1}\NormalTok{, }\DataTypeTok{adj=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+\NormalTok{## 1:1}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{a=}\DecValTok{0}\NormalTok{, }\DataTypeTok{b=}\DecValTok{1}\NormalTok{, }\DataTypeTok{col=}\StringTok{"gray"}\NormalTok{)}
+\CommentTok{#text(1.2e4, 1.2e4, "1:1", adj=c(1,0))}
+\NormalTok{## R-S}
+\KeywordTok{lines}\NormalTok{(ss, rr, }\DataTypeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\NormalTok{rmod <-}\StringTok{ }\KeywordTok{expression}\NormalTok{(}\KeywordTok{frac}\NormalTok{(}\KeywordTok{italic}\NormalTok{(alpha }\OperatorTok{*}\StringTok{ }\NormalTok{S[t]),}\KeywordTok{italic}\NormalTok{(e}\OperatorTok{^}\NormalTok{\{beta }\OperatorTok{*}\StringTok{ }\NormalTok{S[t]\})))}
+\KeywordTok{text}\NormalTok{(}\DecValTok{12300}\NormalTok{, ra}\OperatorTok{*}\KeywordTok{max}\NormalTok{(ss)}\OperatorTok{/}\KeywordTok{exp}\NormalTok{(rb}\OperatorTok{*}\KeywordTok{max}\NormalTok{(ss)), rmod, }\DataTypeTok{adj=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.5}\NormalTok{), }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+\NormalTok{## alpha}
+\KeywordTok{segments}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1900}\NormalTok{, ra}\OperatorTok{*}\DecValTok{1900}\NormalTok{, }\DataTypeTok{lty=}\StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\DecValTok{2000}\NormalTok{, ra}\OperatorTok{*}\DecValTok{2000}\NormalTok{, }\KeywordTok{expression}\NormalTok{(alpha), }\DataTypeTok{adj=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.5}\NormalTok{))}
+\NormalTok{## MSY}
+\KeywordTok{segments}\NormalTok{(rsy,}\DecValTok{0}\NormalTok{,rsy,ra}\OperatorTok{*}\NormalTok{rsy}\OperatorTok{/}\KeywordTok{exp}\NormalTok{(rb}\OperatorTok{*}\NormalTok{rsy), }\DataTypeTok{lty=}\StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(rsy, }\DecValTok{0}\NormalTok{, }\KeywordTok{expression}\NormalTok{(}\KeywordTok{frac}\NormalTok{(}\DecValTok{1}\OperatorTok{-}\KeywordTok{italic}\NormalTok{(W)}\OperatorTok{~}\KeywordTok{bgroup}\NormalTok{(}\StringTok{"("}\NormalTok{,}\KeywordTok{frac}\NormalTok{(}\KeywordTok{italic}\NormalTok{(e),alpha),}\StringTok{")"}\NormalTok{),beta)), }\DataTypeTok{adj=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\FloatTok{1.1}\NormalTok{), }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+\KeywordTok{segments}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{],ra}\OperatorTok{*}\NormalTok{rsy}\OperatorTok{/}\KeywordTok{exp}\NormalTok{(rb}\OperatorTok{*}\NormalTok{rsy),rsy,ra}\OperatorTok{*}\NormalTok{rsy}\OperatorTok{/}\KeywordTok{exp}\NormalTok{(rb}\OperatorTok{*}\NormalTok{rsy), }\DataTypeTok{lty=}\StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\DecValTok{0}\NormalTok{, ra}\OperatorTok{*}\NormalTok{rsy}\OperatorTok{/}\KeywordTok{exp}\NormalTok{(rb}\OperatorTok{*}\NormalTok{rsy), }\KeywordTok{expression}\NormalTok{(}\KeywordTok{italic}\NormalTok{(R)[MSY]), }\DataTypeTok{pos=}\DecValTok{2}\NormalTok{, }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+\NormalTok{## K}
+\KeywordTok{segments}\NormalTok{(}\DecValTok{0}\NormalTok{, }\KeywordTok{log}\NormalTok{(ra)}\OperatorTok{/}\NormalTok{rb, }\KeywordTok{log}\NormalTok{(ra)}\OperatorTok{/}\NormalTok{rb, }\KeywordTok{log}\NormalTok{(ra)}\OperatorTok{/}\NormalTok{rb, }\DataTypeTok{lty=}\StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{segments}\NormalTok{(}\KeywordTok{log}\NormalTok{(ra)}\OperatorTok{/}\NormalTok{rb, }\DecValTok{0}\NormalTok{, }\KeywordTok{log}\NormalTok{(ra)}\OperatorTok{/}\NormalTok{rb, }\KeywordTok{log}\NormalTok{(ra)}\OperatorTok{/}\NormalTok{rb, }\DataTypeTok{lty=}\StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\KeywordTok{log}\NormalTok{(ra)}\OperatorTok{/}\NormalTok{rb, }\DecValTok{0}\NormalTok{, }\KeywordTok{expression}\NormalTok{(}\KeywordTok{frac}\NormalTok{(}\KeywordTok{log}\NormalTok{(alpha),beta)), }\DataTypeTok{adj=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\FloatTok{1.2}\NormalTok{), }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\DecValTok{0}\NormalTok{, }\KeywordTok{log}\NormalTok{(ra)}\OperatorTok{/}\NormalTok{rb, }\KeywordTok{expression}\NormalTok{(}\KeywordTok{italic}\NormalTok{(K)), }\DataTypeTok{pos=}\DecValTok{2}\NormalTok{, }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+
+\NormalTok{## B-H}
+\KeywordTok{plot}\NormalTok{(ss, br, }\DataTypeTok{type=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{xlim=}\KeywordTok{range}\NormalTok{(ss), }\DataTypeTok{ylim=}\KeywordTok{range}\NormalTok{(ss), }\DataTypeTok{xaxs=}\StringTok{"i"}\NormalTok{, }\DataTypeTok{yaxs=}\StringTok{"i"}\NormalTok{,}
+     \DataTypeTok{xlab=}\StringTok{""}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{""}\NormalTok{, }\DataTypeTok{xaxt=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{yaxt=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{bty=}\StringTok{"L"}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\KeywordTok{expression}\NormalTok{(}\KeywordTok{italic}\NormalTok{(S[t])), }\DecValTok{1}\NormalTok{, }\DataTypeTok{line=}\DecValTok{1}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{1.1}\NormalTok{, }\DataTypeTok{at=}\KeywordTok{max}\NormalTok{(ss))}
+\KeywordTok{mtext}\NormalTok{(}\KeywordTok{expression}\NormalTok{(}\KeywordTok{italic}\NormalTok{(R[t])), }\DecValTok{2}\NormalTok{, }\DataTypeTok{line=}\FloatTok{0.5}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{1.1}\NormalTok{, }\DataTypeTok{at=}\KeywordTok{max}\NormalTok{(ss), }\DataTypeTok{las=}\DecValTok{1}\NormalTok{)}
+\NormalTok{bttl <-}\StringTok{ "(b) Beverton-Holt"}
+\KeywordTok{text}\NormalTok{(}\DecValTok{400}\NormalTok{, }\KeywordTok{max}\NormalTok{(ss), bttl, }\DataTypeTok{cex=}\FloatTok{1.1}\NormalTok{, }\DataTypeTok{adj=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+\NormalTok{## 1:1}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{a=}\DecValTok{0}\NormalTok{, }\DataTypeTok{b=}\DecValTok{1}\NormalTok{, }\DataTypeTok{col=}\StringTok{"gray"}\NormalTok{)}
+\NormalTok{## R-S}
+\KeywordTok{lines}\NormalTok{(ss, br, }\DataTypeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\NormalTok{bmod <-}\StringTok{ }\KeywordTok{expression}\NormalTok{(}\KeywordTok{frac}\NormalTok{(}\KeywordTok{italic}\NormalTok{(alpha }\OperatorTok{*}\StringTok{ }\NormalTok{S[t]),}\DecValTok{1}\OperatorTok{+}\KeywordTok{italic}\NormalTok{(beta }\OperatorTok{*}\StringTok{ }\NormalTok{S[t])))}
+\KeywordTok{text}\NormalTok{(}\KeywordTok{max}\NormalTok{(ss)}\OperatorTok{+}\DecValTok{300}\NormalTok{, ba}\OperatorTok{*}\KeywordTok{max}\NormalTok{(ss)}\OperatorTok{/}\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{bb}\OperatorTok{*}\KeywordTok{max}\NormalTok{(ss)), bmod, }\DataTypeTok{adj=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.5}\NormalTok{), }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+\NormalTok{## alpha}
+\KeywordTok{segments}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1500}\NormalTok{, ba}\OperatorTok{*}\DecValTok{1500}\NormalTok{, }\DataTypeTok{lty=}\StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\DecValTok{1600}\NormalTok{, ba}\OperatorTok{*}\DecValTok{1600}\NormalTok{, }\KeywordTok{expression}\NormalTok{(alpha), }\DataTypeTok{adj=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.5}\NormalTok{))}
+\NormalTok{## MSY}
+\KeywordTok{segments}\NormalTok{(bsy,}\DecValTok{0}\NormalTok{,bsy,ba}\OperatorTok{*}\NormalTok{bsy}\OperatorTok{/}\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{bb}\OperatorTok{*}\NormalTok{bsy), }\DataTypeTok{lty=}\StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(bsy, }\DecValTok{0}\NormalTok{, }\KeywordTok{expression}\NormalTok{(}\KeywordTok{frac}\NormalTok{(}\KeywordTok{root}\NormalTok{(alpha)}\OperatorTok{-}\DecValTok{1}\NormalTok{,beta)), }\DataTypeTok{adj=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\FloatTok{1.2}\NormalTok{), }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+\KeywordTok{segments}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{],ba}\OperatorTok{*}\NormalTok{bsy}\OperatorTok{/}\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{bb}\OperatorTok{*}\NormalTok{bsy),bsy,ba}\OperatorTok{*}\NormalTok{bsy}\OperatorTok{/}\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{bb}\OperatorTok{*}\NormalTok{bsy), }\DataTypeTok{lty=}\StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\DecValTok{0}\NormalTok{, ba}\OperatorTok{*}\NormalTok{bsy}\OperatorTok{/}\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{bb}\OperatorTok{*}\NormalTok{bsy), }\KeywordTok{expression}\NormalTok{(}\KeywordTok{italic}\NormalTok{(R)[MSY]), }\DataTypeTok{pos=}\DecValTok{2}\NormalTok{, }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+\NormalTok{## K}
+\KeywordTok{segments}\NormalTok{(}\DecValTok{0}\NormalTok{, (ba}\OperatorTok{-}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{bb, (ba}\OperatorTok{-}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{bb, (ba}\OperatorTok{-}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{bb, }\DataTypeTok{lty=}\StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{segments}\NormalTok{((ba}\OperatorTok{-}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{bb, }\DecValTok{0}\NormalTok{, (ba}\OperatorTok{-}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{bb, (ba}\OperatorTok{-}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{bb, }\DataTypeTok{lty=}\StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{((ba}\OperatorTok{-}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{bb, }\DecValTok{0}\NormalTok{, }\KeywordTok{expression}\NormalTok{(}\KeywordTok{frac}\NormalTok{(alpha}\OperatorTok{-}\DecValTok{1}\NormalTok{,beta)), }\DataTypeTok{adj=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\FloatTok{1.2}\NormalTok{), }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\DecValTok{0}\NormalTok{, (ba}\OperatorTok{-}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{bb, }\KeywordTok{expression}\NormalTok{(}\KeywordTok{italic}\NormalTok{(K)), }\DataTypeTok{pos=}\DecValTok{2}\NormalTok{, }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{App_3_Summarize_results_files/figure-latex/fig_1_model_forms-1} \end{center}
+
+Figure 1. Deterministic forms of the (a) Ricker and (b) Beverton-Holt
+models used in the analyses (thick lines), including equations for
+carrying capacity (\(K\)) and the number of recruits corresponding to
+the maximum sustained yield (\(R_{\text{MSY}}\)). The parameter
+\(\alpha\) defines the slope at the origin, the constant \(e\) is Eulers
+number, and \(W\) is the Lambert function (see Scheuerell 2016 for
+details). The gray line is where \(R_t = S_t\).
+
+\section{Main results}\label{main-results}
+
+We need to convert the \texttt{mcmc.list} output into a more
+user-friendly form for plotting, etc.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## results}
+\NormalTok{mod_res <-}\StringTok{ }\KeywordTok{do.call}\NormalTok{(}\StringTok{"rbind"}\NormalTok{, best_fit)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Total population size}\label{total-population-size}
+
+Here is our estimate of the total run size (i.e., catch + escapement)
+over time. The black points are the data, the blue line is the median
+posterior estimate, and the shaded region is the 95\% credible interval.
+Note that the y-axis is on a log scale.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{clr <-}\StringTok{ }\KeywordTok{rgb}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{255}\NormalTok{, }\DataTypeTok{alpha =} \DecValTok{50}\NormalTok{, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{)}
+\NormalTok{## estimated spawner data for plotting}
+\NormalTok{p_dat <-}\StringTok{ }\NormalTok{mod_res[,}\KeywordTok{grep}\NormalTok{(}\StringTok{"Sp"}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(mod_res))]}
+\NormalTok{p_dat <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(p_dat, }\DecValTok{2}\NormalTok{, quantile, CI_vec)}
+\NormalTok{p_dat <-}\StringTok{ }\NormalTok{p_dat }\OperatorTok{+}\StringTok{ }\KeywordTok{matrix}\NormalTok{(dat_harv, }\KeywordTok{length}\NormalTok{(CI_vec), n_yrs}\OperatorTok{+}\NormalTok{n_fore, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{## time seq}
+\NormalTok{t_idx_f <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(yr_frst, }\DataTypeTok{length.out =}\NormalTok{ n_yrs}\OperatorTok{+}\NormalTok{n_fore)}
+\NormalTok{## plot}
+\NormalTok{yp_min <-}\StringTok{ }\KeywordTok{min}\NormalTok{(p_dat)}
+\NormalTok{yp_max <-}\StringTok{ }\KeywordTok{max}\NormalTok{(p_dat)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mai =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.1}\NormalTok{), }\DataTypeTok{omi =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.2}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.2}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(t_idx_f, p_dat[}\DecValTok{3}\NormalTok{,], }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(yp_min,yp_max), }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{,}
+     \DataTypeTok{log =} \StringTok{"y"}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{bty =} \StringTok{"L"}\NormalTok{,}
+     \DataTypeTok{xlab =} \StringTok{"Year"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Run size (Catch + Escapement)"}\NormalTok{, }\DataTypeTok{main =} \StringTok{""}\NormalTok{, }\DataTypeTok{cex.lab =} \FloatTok{1.2}\NormalTok{)}
+\KeywordTok{polygon}\NormalTok{(}\KeywordTok{c}\NormalTok{(t_idx_f, }\KeywordTok{rev}\NormalTok{(t_idx_f)), }\KeywordTok{c}\NormalTok{(p_dat[}\DecValTok{3}\NormalTok{,], }\KeywordTok{rev}\NormalTok{(p_dat[}\DecValTok{1}\NormalTok{,])),}
+        \DataTypeTok{col =}\NormalTok{ clr, }\DataTypeTok{border =} \OtherTok{NA}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(t_idx_f, p_dat[}\DecValTok{2}\NormalTok{,], }\DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(t_idx_f, }\KeywordTok{exp}\NormalTok{(ln_dat_esc) }\OperatorTok{+}\StringTok{ }\NormalTok{dat_harv, }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{cex =} \DecValTok{1}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{at =} \KeywordTok{seq}\NormalTok{(}\DecValTok{1980}\NormalTok{, }\DecValTok{2015}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DataTypeTok{at =} \KeywordTok{c}\NormalTok{(}\DecValTok{4000}\NormalTok{, }\DecValTok{8000}\NormalTok{, }\DecValTok{16000}\NormalTok{,}\DecValTok{50000}\NormalTok{,}\DecValTok{100000}\NormalTok{,}\DecValTok{300000}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{App_3_Summarize_results_files/figure-latex/fig_2_run_size-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{clr <-}\StringTok{ }\KeywordTok{rgb}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{255}\NormalTok{, }\DataTypeTok{alpha =} \DecValTok{50}\NormalTok{, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{)}
+\NormalTok{## estimated spawner data for plotting}
+\NormalTok{p_dat <-}\StringTok{ }\NormalTok{mod_res[,}\KeywordTok{grep}\NormalTok{(}\StringTok{"Sp"}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(mod_res))]}
+\NormalTok{p_dat <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(p_dat, }\DecValTok{2}\NormalTok{, quantile, CI_vec)}
+\NormalTok{## time seq}
+\NormalTok{t_idx_f <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(yr_frst, }\DataTypeTok{length.out =}\NormalTok{ n_yrs}\OperatorTok{+}\NormalTok{n_fore)}
+\NormalTok{## plot}
+\NormalTok{yp_min <-}\StringTok{ }\KeywordTok{min}\NormalTok{(p_dat)}
+\NormalTok{yp_max <-}\StringTok{ }\KeywordTok{max}\NormalTok{(p_dat)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mai =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.1}\NormalTok{), }\DataTypeTok{omi =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.2}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.2}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(t_idx_f, p_dat[}\DecValTok{3}\NormalTok{,], }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(yp_min,yp_max), }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{,}
+     \DataTypeTok{log =} \StringTok{"y"}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{bty =} \StringTok{"L"}\NormalTok{,}
+     \DataTypeTok{xlab =} \StringTok{"Year"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Escapement"}\NormalTok{, }\DataTypeTok{main =} \StringTok{""}\NormalTok{, }\DataTypeTok{cex.lab =} \FloatTok{1.2}\NormalTok{)}
+\KeywordTok{polygon}\NormalTok{(}\KeywordTok{c}\NormalTok{(t_idx_f, }\KeywordTok{rev}\NormalTok{(t_idx_f)), }\KeywordTok{c}\NormalTok{(p_dat[}\DecValTok{3}\NormalTok{,], }\KeywordTok{rev}\NormalTok{(p_dat[}\DecValTok{1}\NormalTok{,])),}
+        \DataTypeTok{col =}\NormalTok{ clr, }\DataTypeTok{border =} \OtherTok{NA}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(t_idx_f, p_dat[}\DecValTok{2}\NormalTok{,], }\DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(t_idx_f, }\KeywordTok{exp}\NormalTok{(ln_dat_esc), }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{cex =} \DecValTok{1}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h =} \DecValTok{46000}\NormalTok{,}\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{at =} \KeywordTok{seq}\NormalTok{(}\DecValTok{1980}\NormalTok{, }\DecValTok{2015}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DataTypeTok{at =} \KeywordTok{c}\NormalTok{(}\DecValTok{4000}\NormalTok{, }\DecValTok{8000}\NormalTok{, }\DecValTok{16000}\NormalTok{,}\DecValTok{50000}\NormalTok{,}\DecValTok{100000}\NormalTok{,}\DecValTok{300000}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{App_3_Summarize_results_files/figure-latex/fig_2_run_size_1-1} \end{center}
+
+Figure 2. Time series of the estimated total population size (catch plus
+the adults that escaped to spawn). The observed data are the points; the
+solid line is the median estimate and the shaded region indicates the
+95\% credible interval.
+
+\subsection{Spawner-recruit
+relationship}\label{spawner-recruit-relationship}
+
+Here is the relationship between spawner and subsequent recruits (a),
+assuming mean values for all covariates. Gray lines show the median
+relationship for each of the 39 years based on \(a_t\). Note that for
+plotting purposes only in (b) and (c), the density in the largest bin
+for each parameter contains counts for all values greater or equal to
+that. Vertical arrows under the x-axes in (b) and (c) indicate the
+2.5\textsuperscript{th}, 50\textsuperscript{th}, and
+97.5\textsuperscript{th} percentiles.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{layout}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{),}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{),}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{),}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\NormalTok{xoffSet <-}\StringTok{ }\FloatTok{0.05}
+\NormalTok{yoffSet <-}\StringTok{ }\FloatTok{0.03}
+
+\NormalTok{## colors for plotting}
+\NormalTok{clr <-}\StringTok{ }\KeywordTok{rgb}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{200}\NormalTok{,}
+           \DataTypeTok{alpha =} \KeywordTok{seq}\NormalTok{(}\DecValTok{200}\NormalTok{, }\DecValTok{100}\NormalTok{,}
+                       \DataTypeTok{length.out =}\NormalTok{ age_max}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore),}
+           \DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{)}
+
+\NormalTok{## posterior of spawners}
+\NormalTok{s_dat <-}\StringTok{ }\NormalTok{mod_res[,}\KeywordTok{grep}\NormalTok{(}\StringTok{"Sp"}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(mod_res))]}
+\NormalTok{s_dat <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(s_dat, }\DecValTok{2}\NormalTok{, quantile, CI_vec)}
+\NormalTok{s_dat <-}\StringTok{ }\NormalTok{s_dat[, }\DecValTok{1}\OperatorTok{:}\NormalTok{(n_yrs}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore)]}
+
+\NormalTok{## posterior of recruits}
+\NormalTok{r_dat <-}\StringTok{ }\NormalTok{mod_res[, }\KeywordTok{grep}\NormalTok{(}\StringTok{"tot_ln_Rec"}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(mod_res))]}
+\NormalTok{r_dat <-}\StringTok{ }\KeywordTok{exp}\NormalTok{(}\KeywordTok{apply}\NormalTok{(r_dat, }\DecValTok{2}\NormalTok{, quantile, CI_vec))}
+
+\NormalTok{r_s_dat <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{years =}\NormalTok{ dat_yrs[}\DecValTok{1}\OperatorTok{:}\NormalTok{(n_yrs}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore)],}\DataTypeTok{escapement =}\NormalTok{ (s_dat[}\DecValTok{2}\NormalTok{,]),}\DataTypeTok{adult_recruits =}\NormalTok{ (r_dat[}\DecValTok{2}\NormalTok{,]))}
+
+\CommentTok{# ## write model time series of recruits and spawners to a file}
+\CommentTok{# write_csv(r_s_dat, file.path(datadir, "skagit_chum_rec_sp.csv"))}
+
+
+\NormalTok{## median values for a & b}
+\NormalTok{aa <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(mod_res[, }\KeywordTok{grep}\NormalTok{(}\StringTok{"ln_BH_a"}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(mod_res))], }\DecValTok{2}\NormalTok{, median)}
+\NormalTok{bb <-}\StringTok{ }\KeywordTok{median}\NormalTok{(mod_res[, }\StringTok{"beta"}\NormalTok{])}
+
+
+
+\NormalTok{## empty plot space for spawner-recruit relationships}
+\NormalTok{dd <-}\StringTok{ }\DecValTok{50000}
+\NormalTok{yM <-}\StringTok{ }\KeywordTok{around}\NormalTok{(}\KeywordTok{max}\NormalTok{(r_dat), }\StringTok{"ceiling"}\NormalTok{, dd)}
+\NormalTok{xM <-}\StringTok{ }\KeywordTok{around}\NormalTok{(}\KeywordTok{max}\NormalTok{(s_dat), }\StringTok{"ceiling"}\NormalTok{, dd)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mai =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.1}\NormalTok{), }\DataTypeTok{omi =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(s_dat[}\DecValTok{2}\NormalTok{,], r_dat[}\DecValTok{2}\NormalTok{,], }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,xM), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,yM), }\DataTypeTok{type =} \StringTok{"n"}\NormalTok{,}
+     \DataTypeTok{xaxs =} \StringTok{"i"}\NormalTok{, }\DataTypeTok{yaxs =} \StringTok{"i"}\NormalTok{, }\DataTypeTok{cex.lab =} \FloatTok{1.2}\NormalTok{,}
+     \DataTypeTok{xlab =} \KeywordTok{expression}\NormalTok{(Spawners}\OperatorTok{~}\NormalTok{(}\DecValTok{10}\OperatorTok{^}\DecValTok{3}\NormalTok{)),}
+     \DataTypeTok{ylab =} \KeywordTok{expression}\NormalTok{(Recruits}\OperatorTok{~}\NormalTok{(}\DecValTok{10}\OperatorTok{^}\DecValTok{3}\NormalTok{)),}
+     \DataTypeTok{xaxt =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{bty=}\StringTok{"L"}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{at =} \KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,xM,dd}\OperatorTok{*}\DecValTok{2}\NormalTok{), }\DataTypeTok{labels =} \KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,xM,dd}\OperatorTok{*}\DecValTok{2}\NormalTok{)}\OperatorTok{/}\DecValTok{1000}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DataTypeTok{at =} \KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,yM,dd}\OperatorTok{*}\DecValTok{2}\NormalTok{), }\DataTypeTok{labels =} \KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,yM,dd}\OperatorTok{*}\DecValTok{2}\NormalTok{)}\OperatorTok{/}\DecValTok{1000}\NormalTok{, }\DataTypeTok{las=}\DecValTok{1}\NormalTok{)}
+
+\NormalTok{samples <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{5000}\NormalTok{,}\DecValTok{1}\NormalTok{),}\DecValTok{100}\NormalTok{)}
+\NormalTok{aa_sample <-}\StringTok{ }\NormalTok{aa[samples]}
+\NormalTok{b_sample <-}\StringTok{ }\NormalTok{bb[samples]}
+
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(aa)) \{}
+  \KeywordTok{lines}\NormalTok{(}\KeywordTok{exp}\NormalTok{(aa[i]) }\OperatorTok{*}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,xM) }\OperatorTok{/}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{bb }\OperatorTok{*}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,xM)),}
+       \DataTypeTok{col =} \StringTok{"darkgray"}\NormalTok{)}
+\NormalTok{\}}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{a =} \DecValTok{0}\NormalTok{,}\DataTypeTok{b =} \DecValTok{1}\NormalTok{,}\DataTypeTok{lty =} \StringTok{"dashed"}\NormalTok{)}
+
+\NormalTok{## add S-R estimates and medians}
+\NormalTok{nCB <-}\StringTok{ }\NormalTok{n_yrs}\OperatorTok{-}\NormalTok{age_max}
+\NormalTok{## years with complete returns}
+\KeywordTok{points}\NormalTok{(s_dat[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\NormalTok{nCB], r_dat[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\NormalTok{nCB],}
+       \DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,xM), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,yM),}
+       \DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{)}
+\KeywordTok{segments}\NormalTok{(s_dat[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\NormalTok{nCB], r_dat[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\NormalTok{nCB],}
+\NormalTok{         s_dat[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\NormalTok{nCB], r_dat[}\DecValTok{3}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\NormalTok{nCB],}
+         \DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{)}
+\KeywordTok{segments}\NormalTok{(s_dat[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\NormalTok{nCB], r_dat[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\NormalTok{nCB],}
+\NormalTok{         s_dat[}\DecValTok{3}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\NormalTok{nCB], r_dat[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\NormalTok{nCB],}
+         \DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{)}
+\NormalTok{nTB <-}\StringTok{ }\KeywordTok{dim}\NormalTok{(s_dat)[}\DecValTok{2}\NormalTok{]}
+\NormalTok{## years with incomplete returns}
+\KeywordTok{segments}\NormalTok{(s_dat[}\DecValTok{2}\NormalTok{, (nCB}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{:}\NormalTok{nTB], r_dat[}\DecValTok{1}\NormalTok{, (nCB}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{:}\NormalTok{nTB],}
+\NormalTok{         s_dat[}\DecValTok{2}\NormalTok{, (nCB}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{:}\NormalTok{nTB], r_dat[}\DecValTok{3}\NormalTok{, (nCB}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{:}\NormalTok{nTB],}
+         \DataTypeTok{col =}\NormalTok{ clr)}
+\KeywordTok{segments}\NormalTok{(s_dat[}\DecValTok{1}\NormalTok{, (nCB}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{:}\NormalTok{nTB], r_dat[}\DecValTok{2}\NormalTok{, (nCB}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{:}\NormalTok{nTB],}
+\NormalTok{         s_dat[}\DecValTok{3}\NormalTok{, (nCB}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{:}\NormalTok{nTB], r_dat[}\DecValTok{2}\NormalTok{, (nCB}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{:}\NormalTok{nTB],}
+         \DataTypeTok{col =}\NormalTok{ clr)}
+\KeywordTok{points}\NormalTok{(s_dat[}\DecValTok{2}\NormalTok{, (nCB}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{:}\NormalTok{nTB],r_dat[}\DecValTok{2}\NormalTok{, (nCB}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{:}\NormalTok{nTB],}
+       \DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,xM), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,yM),}
+       \DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{col =}\NormalTok{ clr)}
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{xoffSet,}
+     \DataTypeTok{y =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{yoffSet,}
+     \StringTok{"(a)"}\NormalTok{)}
+
+\NormalTok{## posterior for alpha}
+\NormalTok{clr <-}\StringTok{ }\KeywordTok{rgb}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{255}\NormalTok{, }\DataTypeTok{alpha =} \DecValTok{50}\NormalTok{, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{)}
+\NormalTok{a_thresh <-}\StringTok{ }\DecValTok{15}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mai =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.4}\NormalTok{,}\FloatTok{0.3}\NormalTok{,}\FloatTok{0.1}\NormalTok{))}
+\NormalTok{## B-H alpha}
+\NormalTok{R_alpha_est <-}\StringTok{ }\NormalTok{mod_res[, }\StringTok{"alpha"}\NormalTok{]}
+\NormalTok{alphaCI <-}\StringTok{ }\KeywordTok{quantile}\NormalTok{(R_alpha_est, CI_vec)}
+\NormalTok{R_alpha_est[R_alpha_est }\OperatorTok{>}\StringTok{ }\NormalTok{a_thresh] <-}\StringTok{ }\NormalTok{a_thresh}
+\KeywordTok{hist}\NormalTok{(R_alpha_est, }\DataTypeTok{freq =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{breaks =} \KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, a_thresh, }\FloatTok{0.5}\NormalTok{),}
+    \DataTypeTok{col =}\NormalTok{ clr, }\DataTypeTok{border =} \StringTok{"blue3"}\NormalTok{,}
+    \DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{""}\NormalTok{, }\DataTypeTok{main =} \StringTok{""}\NormalTok{, }\DataTypeTok{cex.lab =} \FloatTok{1.2}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{"n"}\NormalTok{)}
+\NormalTok{aHt <-}\StringTok{ }\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{])}\OperatorTok{/}\DecValTok{12}
+\KeywordTok{arrows}\NormalTok{(alphaCI, }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{], alphaCI,}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{-}\NormalTok{aHt,}
+       \DataTypeTok{code =} \DecValTok{1}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.05}\NormalTok{, }\DataTypeTok{xpd =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd =} \FloatTok{1.5}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\KeywordTok{expression}\NormalTok{(Instrinsic}\OperatorTok{~}\NormalTok{productivity}\OperatorTok{~}\NormalTok{(alpha)), }\DecValTok{1}\NormalTok{, }\DataTypeTok{line =} \DecValTok{3}\NormalTok{, }\DataTypeTok{cex =} \DecValTok{1}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{],}
+     \DataTypeTok{y =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{*}\StringTok{ }\FloatTok{1.05}\NormalTok{,}
+     \StringTok{"(b)"}\NormalTok{, }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+
+
+\NormalTok{## posterior for K}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mai =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.4}\NormalTok{,}\FloatTok{0.3}\NormalTok{,}\FloatTok{0.1}\NormalTok{))}
+\NormalTok{aa <-}\StringTok{ }\NormalTok{mod_res[, }\StringTok{"alpha"}\NormalTok{]}
+\NormalTok{bb <-}\StringTok{ }\NormalTok{mod_res[, }\StringTok{"beta"}\NormalTok{]}
+\NormalTok{## K in 1000s}
+\NormalTok{R_b_est <-}\StringTok{ }\NormalTok{(aa}\OperatorTok{-}\DecValTok{1}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{bb }\OperatorTok{/}\StringTok{ }\DecValTok{1000}
+\NormalTok{R_b_est <-}\StringTok{ }\NormalTok{R_b_est[R_b_est }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{]}
+\NormalTok{R_b_CI <-}\StringTok{ }\KeywordTok{quantile}\NormalTok{(R_b_est, CI_vec)}
+\NormalTok{## pile into last ban for plotting}
+\NormalTok{R_b_est[R_b_est }\OperatorTok{>}\StringTok{ }\DecValTok{150}\NormalTok{] <-}\StringTok{ }\DecValTok{150}
+\NormalTok{brks <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\KeywordTok{around}\NormalTok{(}\KeywordTok{min}\NormalTok{(R_b_est), }\StringTok{"floor"}\NormalTok{),}
+            \DecValTok{150}\NormalTok{,}
+            \DataTypeTok{length.out=}\KeywordTok{length}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{15}\NormalTok{,}\FloatTok{0.5}\NormalTok{)))}
+\KeywordTok{hist}\NormalTok{(R_b_est, }\DataTypeTok{freq =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{breaks =}\NormalTok{ brks, }\DataTypeTok{col =}\NormalTok{ clr, }\DataTypeTok{border =} \StringTok{"blue3"}\NormalTok{,}
+     \DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{"n"}\NormalTok{,}
+     \DataTypeTok{main =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{""}\NormalTok{, }\DataTypeTok{cex.lab =} \FloatTok{1.2}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{at =} \KeywordTok{seq}\NormalTok{(}\KeywordTok{around}\NormalTok{(}\KeywordTok{min}\NormalTok{(R_b_est), }\StringTok{"floor"}\NormalTok{),}
+                 \KeywordTok{around}\NormalTok{(}\KeywordTok{max}\NormalTok{(R_b_est), }\StringTok{"ceiling"}\NormalTok{),}
+                 \DecValTok{50}\NormalTok{))}
+\NormalTok{aHt <-}\StringTok{ }\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]) }\OperatorTok{/}\StringTok{ }\DecValTok{12}
+\KeywordTok{arrows}\NormalTok{(R_b_CI, }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{], R_b_CI,}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{-}\NormalTok{aHt,}
+       \DataTypeTok{code =} \DecValTok{1}\NormalTok{, }\DataTypeTok{length =} \FloatTok{0.05}\NormalTok{, }\DataTypeTok{xpd =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd =} \FloatTok{1.5}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\KeywordTok{expression}\NormalTok{(}\KeywordTok{paste}\NormalTok{(}\StringTok{"Carrying capacity ("}\NormalTok{,}\KeywordTok{italic}\NormalTok{(K),}\StringTok{", "}\NormalTok{,}\DecValTok{10}\OperatorTok{^}\DecValTok{3}\NormalTok{,}\StringTok{")"}\NormalTok{)),}
+      \DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\DataTypeTok{line =} \DecValTok{3}\NormalTok{, }\DataTypeTok{cex =} \DecValTok{1}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{],}
+     \DataTypeTok{y =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{*}\StringTok{ }\FloatTok{1.05}\NormalTok{,}
+     \StringTok{"(c)"}\NormalTok{, }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{App_3_Summarize_results_files/figure-latex/fig_3_S-R-1} \end{center}
+
+Figure 3. Relationship between the number of spawning adults and their
+subsequent surviving offspring (recruits), assuming mean values for all
+covariates (a); and the estimated posterior distributions for the
+intrinsic productivity (b) and carrying capacity (c). Points in (a) are
+medians of the posterior estimates; error bars indicate the 95\%
+credible intervals. Blue points are for estimates with complete broods;
+purple points are for the most recent years with incomplete broods. Gray
+lines show the median relationship for each of the 41 years in the time
+series based on annual model estimates of productivity. Note that for
+plotting purposes only in (b) and (c), the density in the largest bin
+for each parameter contains counts for all values greater than or equal
+to it. Vertical arrows under the x-axes in (b) and (c) indicate the
+2.5\(^\text{th}\), 50\(^\text{th}\), and 97.5\(^\text{th}\) percentiles.
+
+Here are summaries of the posterior distributions for \(\alpha\) and
+\(K\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## intrinsic productivity}
+\KeywordTok{round}\NormalTok{(alphaCI, }\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  2.5%   50% 97.5% 
+##  1.83  2.87  9.60
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## carrying capacity}
+\KeywordTok{round}\NormalTok{(R_b_CI, }\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   2.5%    50%  97.5% 
+##  43.13  71.02 114.32
+\end{verbatim}
+
+\subsection{Covariate effects}\label{covariate-effects}
+
+Here are time series plots of the covariates (a-c) and histograms of
+their effects on productivity (d-f).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{clr <-}\StringTok{ }\KeywordTok{rgb}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{255}\NormalTok{, }\DataTypeTok{alpha =} \DecValTok{50}\NormalTok{, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{)}
+\NormalTok{xoffSet <-}\StringTok{ }\FloatTok{0.04}
+\NormalTok{yoffSet <-}\StringTok{ }\FloatTok{0.03}
+
+
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{), }\DataTypeTok{mai=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.4}\NormalTok{,}\FloatTok{0.3}\NormalTok{,}\FloatTok{0.05}\NormalTok{,}\FloatTok{0.1}\NormalTok{), }\DataTypeTok{omi=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.2}\NormalTok{,}\FloatTok{0.5}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{))}
+
+\NormalTok{c_est <-}\StringTok{ }\NormalTok{mod_res[,}\KeywordTok{grep}\NormalTok{(}\StringTok{"gamma"}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(mod_res))]}
+\NormalTok{ylN <-}\StringTok{ }\KeywordTok{floor}\NormalTok{(}\KeywordTok{min}\NormalTok{(c_est)}\OperatorTok{*}\DecValTok{10}\NormalTok{)}\OperatorTok{/}\DecValTok{10}
+\NormalTok{ylM <-}\StringTok{ }\KeywordTok{ceiling}\NormalTok{(}\KeywordTok{max}\NormalTok{(c_est)}\OperatorTok{*}\DecValTok{10}\NormalTok{)}\OperatorTok{/}\DecValTok{10}
+\NormalTok{brks <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(ylN,ylM,}\DataTypeTok{length.out=}\KeywordTok{diff}\NormalTok{(}\KeywordTok{c}\NormalTok{(ylN,ylM))}\OperatorTok{*}\DecValTok{40}\OperatorTok{+}\DecValTok{1}\NormalTok{)}
+\NormalTok{t_idx <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(yr_frst,}\DataTypeTok{length.out=}\NormalTok{n_yrs}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore)}
+\NormalTok{dat_cvrs <-}\StringTok{ }\KeywordTok{as.matrix}\NormalTok{(dat_cvrs[}\KeywordTok{seq}\NormalTok{(}\KeywordTok{length}\NormalTok{(t_idx)),])}
+
+\NormalTok{whichCov <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+\NormalTok{c <-}\StringTok{ }\DecValTok{1}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in}\NormalTok{ whichCov) \{}
+  \ControlFlowTok{if}\NormalTok{(i}\OperatorTok{==}\DecValTok{4}\NormalTok{) \{}
+\NormalTok{    dat_cvrs[,i}\OperatorTok{+}\DecValTok{1}\NormalTok{] <-}\StringTok{ }\NormalTok{dat_cvrs[,i}\OperatorTok{+}\DecValTok{1}\NormalTok{]}\OperatorTok{/}\DecValTok{1000}
+\NormalTok{  \}}
+\NormalTok{  ## plot covar ts}
+  \KeywordTok{plot}\NormalTok{(dat_cvrs[, }\StringTok{"year"}\NormalTok{], dat_cvrs[, i}\OperatorTok{+}\DecValTok{1}\NormalTok{],}
+       \DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{, }\DataTypeTok{type =} \StringTok{"o"}\NormalTok{,}
+       \DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{""}\NormalTok{, }\DataTypeTok{main =} \StringTok{""}\NormalTok{, }\DataTypeTok{bty =} \StringTok{"L"}\NormalTok{,}
+       \DataTypeTok{cex.axis =} \FloatTok{1.2}\NormalTok{)}
+  \KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{xoffSet,}
+       \DataTypeTok{y =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{yoffSet,}
+       \KeywordTok{paste0}\NormalTok{(}\StringTok{"("}\NormalTok{,letters[c],}\StringTok{")"}\NormalTok{),}
+       \DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+  \KeywordTok{mtext}\NormalTok{(}\DataTypeTok{side =} \DecValTok{2}\NormalTok{, cov_names[c], }\DataTypeTok{line =} \DecValTok{3}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+  \ControlFlowTok{if}\NormalTok{(i }\OperatorTok{==}\StringTok{ }\NormalTok{n_cov) \{}
+    \KeywordTok{mtext}\NormalTok{(}\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\StringTok{"Brood year"}\NormalTok{, }\DataTypeTok{line =} \DecValTok{3}\NormalTok{)}
+\NormalTok{  \}}
+\NormalTok{  ## plot covar effect}
+  \KeywordTok{hist}\NormalTok{(c_est[,c],}
+       \DataTypeTok{freq =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{breaks =}\NormalTok{ brks, }\DataTypeTok{col =}\NormalTok{ clr, }\DataTypeTok{border =}\StringTok{" blue3"}\NormalTok{,}
+       \DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{"n"}\NormalTok{, }\DataTypeTok{main =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{""}\NormalTok{, }\DataTypeTok{cex.axis =} \FloatTok{1.2}\NormalTok{)}
+\NormalTok{  c_CI <-}\StringTok{ }\KeywordTok{quantile}\NormalTok{(c_est[,c],CI_vec)}
+\NormalTok{  aHt <-}\StringTok{ }\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{])}\OperatorTok{/}\DecValTok{20}
+  \KeywordTok{arrows}\NormalTok{(c_CI, }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{]}\OperatorTok{-}\FloatTok{0.005}\NormalTok{, c_CI, }\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{] }\OperatorTok{-}\StringTok{ }\NormalTok{aHt,}
+         \DataTypeTok{code =} \DecValTok{1}\NormalTok{,}\DataTypeTok{length =} \FloatTok{0.05}\NormalTok{, }\DataTypeTok{xpd =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd =} \FloatTok{1.5}\NormalTok{)}
+  \KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =} \DecValTok{0}\NormalTok{, }\DataTypeTok{lty =} \StringTok{"dashed"}\NormalTok{)}
+  \KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{xoffSet,}
+       \DataTypeTok{y =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{yoffSet,}
+       \KeywordTok{paste0}\NormalTok{(}\StringTok{"("}\NormalTok{,letters[c}\OperatorTok{+}\KeywordTok{length}\NormalTok{(whichCov)],}\StringTok{")"}\NormalTok{),}
+       \DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+  \ControlFlowTok{if}\NormalTok{(i }\OperatorTok{==}\StringTok{ }\NormalTok{n_cov) \{ }\KeywordTok{mtext}\NormalTok{(}\DataTypeTok{side =} \DecValTok{1}\NormalTok{,}\StringTok{"Effect size"}\NormalTok{, }\DataTypeTok{line =} \DecValTok{3}\NormalTok{) \}}
+\NormalTok{  c <-}\StringTok{ }\NormalTok{c}\OperatorTok{+}\DecValTok{1}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{App_3_Summarize_results_files/figure-latex/fig_4_cov_effects-1} \end{center}
+
+Figure 4. Time series of the environmental covariates used in the model
+(a-b), and their estimated effects on population productivity (c-d).
+Small arrows under histograms denote 2.5\(^\text{th}\),
+50\(^\text{th}\), and 97.5\(^\text{th}\) percentiles of the posterior
+distribution.
+
+Here is a summary of the covariate effect sizes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gamma_CI <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(c_est, }\DecValTok{2}\NormalTok{, quantile, }\KeywordTok{c}\NormalTok{(}\FloatTok{2.5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{50}\NormalTok{, }\DecValTok{95}\NormalTok{, }\FloatTok{97.5}\NormalTok{)}\OperatorTok{/}\DecValTok{100}\NormalTok{)}
+\KeywordTok{t}\NormalTok{(}\KeywordTok{round}\NormalTok{(gamma_CI, }\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           2.5%    5%   50%   95% 97.5%
+## gamma[1] -0.33 -0.27 -0.03  0.23  0.28
+## gamma[2] -0.43 -0.38 -0.14  0.11  0.16
+## gamma[3] -0.06  0.01  0.27  0.54  0.59
+## gamma[4] -0.88 -0.83 -0.58 -0.34 -0.29
+\end{verbatim}
+
+\subsection{Time-varying productivity}\label{time-varying-productivity}
+
+Here is the time series of the time-varying productivity (\(a_t\)),
+which includes the cumulative effects of the 4 covariates.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pDat <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(mod_res[, }\KeywordTok{grep}\NormalTok{(}\StringTok{"ln_BH_a"}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(mod_res))],}\DecValTok{2}\NormalTok{,quantile,CI_vec)}
+\NormalTok{ypMin <-}\StringTok{ }\KeywordTok{min}\NormalTok{(pDat)}
+\NormalTok{ypMax <-}\StringTok{ }\KeywordTok{max}\NormalTok{(pDat)}
+\NormalTok{t_idx_a <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(yr_frst, }\DataTypeTok{length.out =}\NormalTok{ n_yrs}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore)}
+
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mai=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.1}\NormalTok{), }\DataTypeTok{omi=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.2}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.2}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(t_idx_a,pDat[}\DecValTok{3}\NormalTok{,], }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(ypMin,ypMax), }\DataTypeTok{type=}\StringTok{"n"}\NormalTok{, }\CommentTok{#log="y",}
+     \DataTypeTok{xlab=}\StringTok{"Brood year"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"Productivity"}\NormalTok{, }\DataTypeTok{main=}\StringTok{""}\NormalTok{, }\DataTypeTok{cex.lab=}\FloatTok{1.2}\NormalTok{)}
+\KeywordTok{polygon}\NormalTok{(}\KeywordTok{c}\NormalTok{(t_idx_a,}\KeywordTok{rev}\NormalTok{(t_idx_a)),}\KeywordTok{c}\NormalTok{(pDat[}\DecValTok{3}\NormalTok{,],}\KeywordTok{rev}\NormalTok{(pDat[}\DecValTok{1}\NormalTok{,])), }\DataTypeTok{col=}\NormalTok{clr, }\DataTypeTok{border=}\OtherTok{NA}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(t_idx_a, pDat[}\DecValTok{2}\NormalTok{,], }\DataTypeTok{col=}\StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{App_3_Summarize_results_files/figure-latex/plot_prod_over_time-1.pdf}
+
+Figure 5. Time series of the time-varying productivity, which includes
+the cumulative effects of the 2 covariates.
+
+\subsection{Process errors}\label{process-errors}
+
+Here is the time series of the residuals from the process model. They
+represent the population's productivity after accounting for the effects
+of density dependence and environmental covariates.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dat_SAR <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(datadir,}\StringTok{"ps_hatchery_chum_return_rates.csv"}\NormalTok{))}
+
+\NormalTok{dat_SAR <-}\StringTok{ }\NormalTok{dat_SAR[}\KeywordTok{which}\NormalTok{(dat_SAR}\OperatorTok{$}\NormalTok{year }\OperatorTok{>=}\StringTok{ }\NormalTok{yr_frst),]}
+\NormalTok{dat_SAR <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(dat_SAR)}
+\NormalTok{## time sequence}
+\NormalTok{t_idx_a <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(yr_frst, }\DataTypeTok{length.out =}\NormalTok{ n_yrs}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore)}
+\NormalTok{## plot data}
+\NormalTok{p_dat <-}\StringTok{ }\NormalTok{mod_res[, }\KeywordTok{grep}\NormalTok{(}\StringTok{"res_ln_Rec"}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(mod_res))]}
+\NormalTok{p_dat <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(p_dat, }\DecValTok{2}\NormalTok{, quantile, CI_vec)}
+\NormalTok{yp_min <-}\StringTok{ }\KeywordTok{min}\NormalTok{(p_dat)}
+\NormalTok{yp_max <-}\StringTok{ }\KeywordTok{max}\NormalTok{(p_dat)}
+
+\NormalTok{## plot}
+
+\CommentTok{#par(mfrow = c(2,2),mai = c(0.8,0.8,0.3,0.1), omi = c(0,0,0,0))}
+\CommentTok{#par(mai = c(0.8,0.8,0.1,0.1), omi = c(0,0.2,0.1,0.2))}
+\KeywordTok{layout}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{0}\NormalTok{),}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{),}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{),}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\NormalTok{xoffSet <-}\StringTok{ }\FloatTok{0.05}
+\NormalTok{yoffSet <-}\StringTok{ }\FloatTok{0.03}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mai =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.1}\NormalTok{), }\DataTypeTok{omi =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(t_idx_a, p_dat[}\DecValTok{3}\NormalTok{,],}
+     \DataTypeTok{type =} \StringTok{"n"}\NormalTok{,  }\DataTypeTok{bty =} \StringTok{"L"}\NormalTok{,}
+     \DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(yp_min,yp_max),}
+     \DataTypeTok{xlab =} \StringTok{""}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Process error"}\NormalTok{, }\DataTypeTok{main =} \StringTok{""}\NormalTok{,}
+     \DataTypeTok{cex.lab =} \FloatTok{1.2}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h =} \DecValTok{0}\NormalTok{, }\DataTypeTok{lty =} \StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{polygon}\NormalTok{(}\KeywordTok{c}\NormalTok{(t_idx_a, }\KeywordTok{rev}\NormalTok{(t_idx_a)), }\KeywordTok{c}\NormalTok{(p_dat[}\DecValTok{3}\NormalTok{,], }\KeywordTok{rev}\NormalTok{(p_dat[}\DecValTok{1}\NormalTok{,])),}
+        \DataTypeTok{col =}\NormalTok{ clr, }\DataTypeTok{border =} \OtherTok{NA}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(t_idx_a, p_dat[}\DecValTok{2}\NormalTok{,], }\DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{xoffSet,}
+\DataTypeTok{y =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{yoffSet,}
+\KeywordTok{paste0}\NormalTok{(}\StringTok{"("}\NormalTok{,letters[}\DecValTok{1}\NormalTok{],}\StringTok{")"}\NormalTok{),}
+\DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+
+\KeywordTok{plot}\NormalTok{(dat_SAR[,}\StringTok{"Tulalip"}\NormalTok{]}\OperatorTok{~}\NormalTok{dat_SAR[,}\StringTok{"year"}\NormalTok{],}
+     \DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\DecValTok{1980}\NormalTok{,}\DecValTok{2015}\NormalTok{),}\DataTypeTok{type =} \StringTok{"n"}\NormalTok{,}\DataTypeTok{bty =} \StringTok{"L"}
+\NormalTok{     ,}\DataTypeTok{xlab =} \StringTok{"Brood year"}\NormalTok{,}\DataTypeTok{ylab =} \StringTok{"Tulalip hatchery chum SAR"}\NormalTok{,}
+     \DataTypeTok{cex.lab =} \FloatTok{1.2}\NormalTok{)}
+  \KeywordTok{lines}\NormalTok{(dat_SAR[,}\StringTok{"Tulalip"}\NormalTok{]}\OperatorTok{~}\NormalTok{dat_SAR[,}\StringTok{"year"}\NormalTok{],}\DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{,}\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{xoffSet,}
+\DataTypeTok{y =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{yoffSet,}
+\KeywordTok{paste0}\NormalTok{(}\StringTok{"("}\NormalTok{,letters[}\DecValTok{2}\NormalTok{],}\StringTok{")"}\NormalTok{),}
+\DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+
+
+\NormalTok{## get SAR data}
+
+\NormalTok{dat_SAR <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(datadir,}\StringTok{"ps_hatchery_chum_return_rates.csv"}\NormalTok{))}
+
+\NormalTok{dat_SAR <-}\StringTok{ }\NormalTok{dat_SAR[}\KeywordTok{which}\NormalTok{(dat_SAR}\OperatorTok{$}\NormalTok{year }\OperatorTok{>=}\StringTok{ }\NormalTok{yr_frst),]}
+
+\NormalTok{## get innov}
+\NormalTok{innov <-}\StringTok{ }\KeywordTok{t}\NormalTok{(mod_res[, }\KeywordTok{grep}\NormalTok{(}\StringTok{"res_ln_Rec"}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(mod_res))])}
+\NormalTok{## trim to same brood yrs as SAR data}
+\NormalTok{innov_}\DecValTok{1}\NormalTok{ <-}\StringTok{ }\NormalTok{innov[t_idx_a }\OperatorTok{%in%}\StringTok{ }\NormalTok{dat_SAR}\OperatorTok{$}\NormalTok{year,]}
+
+\NormalTok{## compute correlation over all mcmc samples}
+\NormalTok{cor_vec_SAR <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(innov_}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\ControlFlowTok{function}\NormalTok{(x) \{ }\KeywordTok{cor}\NormalTok{((dat_SAR}\OperatorTok{$}\NormalTok{Tulalip),x) \})}
+\NormalTok{cor_SAR_CI <-}\StringTok{ }\KeywordTok{print}\NormalTok{(}\KeywordTok{quantile}\NormalTok{(cor_vec_SAR,CI_vec),}\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  2.5%   50% 97.5% 
+##  0.34  0.53  0.68
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##compute innov_CI <- apply(p_dat, 2, quantile, CI_vec)}
+\NormalTok{innov_CI <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(innov_}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, quantile, CI_vec)}
+
+
+\NormalTok{y <-}\StringTok{ }\NormalTok{innov_CI}
+\NormalTok{a <-}\StringTok{ }\NormalTok{dat_SAR}\OperatorTok{$}\NormalTok{Tulalip}
+\NormalTok{pred_a<-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\KeywordTok{min}\NormalTok{(a),}\KeywordTok{max}\NormalTok{(a),}\FloatTok{0.1}\NormalTok{)}
+
+
+\NormalTok{model_SAR_median <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(y[}\DecValTok{2}\NormalTok{,]}\OperatorTok{~}\NormalTok{a)}
+
+
+\NormalTok{pred_SAR <-}\StringTok{ }\KeywordTok{predict}\NormalTok{(model_SAR_median,}\DataTypeTok{newdata =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{a =}\NormalTok{ pred_a))}
+
+\CommentTok{#layout(matrix(c(1,2,3,0),2,2),c(3,3),c(3,3))}
+\CommentTok{#xoffSet <- 0.05}
+\CommentTok{#yoffSet <- 0.03}
+\CommentTok{#par(mai = c(0.8,0.8,0.1,0.1), omi = c(0,0,0,0))}
+\KeywordTok{plot}\NormalTok{(pred_a, pred_SAR,}
+     \DataTypeTok{type =} \StringTok{"n"}\NormalTok{,  }\DataTypeTok{bty =} \StringTok{"L"}\NormalTok{,}
+     \DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(yp_min,yp_max),}
+     \DataTypeTok{xlab =} \StringTok{"Hatchery Chum SAR"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Process error"}\NormalTok{, }\DataTypeTok{main =} \StringTok{""}\NormalTok{,}
+     \DataTypeTok{cex.lab =} \FloatTok{1.2}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h =} \DecValTok{0}\NormalTok{, }\DataTypeTok{lty =} \StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(pred_a, pred_SAR, }\DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(innov_CI[}\DecValTok{2}\NormalTok{,]}\OperatorTok{~}\NormalTok{a,}\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{col =} \StringTok{"black"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{xoffSet,}
+\DataTypeTok{y =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{yoffSet,}
+\KeywordTok{paste0}\NormalTok{(}\StringTok{"("}\NormalTok{,letters[}\DecValTok{3}\NormalTok{],}\StringTok{")"}\NormalTok{),}
+\DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{App_3_Summarize_results_files/figure-latex/fig_5_proc_err_1-1} \end{center}
+
+Figure 6. (a) Time series of the estimated process errors, which
+represent the population's productivity after accounting for the effects
+of density dependence and environmental covariates. The solid line is
+the median estimate and the shaded region indicates the 95\% credible
+interval. (b) Time series of marine survival index for Tulalip hatchery
+chum salmon in units of adult recruits per pounds of fry released
+
+\subsubsection{Correlation of process errors \& hatchery
+SAR}\label{correlation-of-process-errors-hatchery-sar}
+
+Here is our estimate of the correlation between the model innovations
+(i.e, process residuals) and other potential explanetory variables not
+included in our model: 1. smolt-to-adult return rate (i.e., logit
+transformed proportion of smolts that survive to adulthood) of hatchery
+chum from the Tulalip hatchery. This gives an indication as to whether
+the unexplained variance in the productivity of wild fish might be
+related to the marine environment; 2. Skagit pink escapement;
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{## get SAR data}
+
+\NormalTok{dat_SAR <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\KeywordTok{file.path}\NormalTok{(datadir,}\StringTok{"ps_hatchery_chum_return_rates.csv"}\NormalTok{))}
+
+\NormalTok{dat_SAR <-}\StringTok{ }\NormalTok{dat_SAR[}\KeywordTok{which}\NormalTok{(dat_SAR}\OperatorTok{$}\NormalTok{year }\OperatorTok{>=}\StringTok{ }\NormalTok{yr_frst),]}
+
+\NormalTok{## get innov}
+\NormalTok{innov <-}\StringTok{ }\KeywordTok{t}\NormalTok{(mod_res[, }\KeywordTok{grep}\NormalTok{(}\StringTok{"res_ln_Rec"}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(mod_res))])}
+\NormalTok{## trim to same brood yrs as SAR data}
+\NormalTok{innov_}\DecValTok{1}\NormalTok{ <-}\StringTok{ }\NormalTok{innov[t_idx_a }\OperatorTok{%in%}\StringTok{ }\NormalTok{dat_SAR}\OperatorTok{$}\NormalTok{year,]}
+
+\NormalTok{## compute correlation over all mcmc samples}
+\NormalTok{cor_vec_SAR <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(innov_}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\ControlFlowTok{function}\NormalTok{(x) \{ }\KeywordTok{cor}\NormalTok{((dat_SAR}\OperatorTok{$}\NormalTok{Tulalip),x) \})}
+\NormalTok{cor_SAR_CI <-}\StringTok{ }\KeywordTok{print}\NormalTok{(}\KeywordTok{quantile}\NormalTok{(cor_vec_SAR,CI_vec),}\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  2.5%   50% 97.5% 
+##  0.34  0.53  0.68
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{##compute innov_CI <- apply(p_dat, 2, quantile, CI_vec)}
+\NormalTok{innov_CI <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(innov_}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, quantile, CI_vec)}
+
+
+\NormalTok{y <-}\StringTok{ }\NormalTok{innov_CI}
+\NormalTok{a <-}\StringTok{ }\NormalTok{dat_SAR}\OperatorTok{$}\NormalTok{Tulalip}
+\NormalTok{pred_a<-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\KeywordTok{min}\NormalTok{(a),}\KeywordTok{max}\NormalTok{(a),}\FloatTok{0.1}\NormalTok{)}
+
+
+\NormalTok{model_SAR_median <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(y[}\DecValTok{2}\NormalTok{,]}\OperatorTok{~}\NormalTok{a)}
+
+
+\NormalTok{pred_SAR <-}\StringTok{ }\KeywordTok{predict}\NormalTok{(model_SAR_median,}\DataTypeTok{newdata =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{a =}\NormalTok{ pred_a))}
+
+\CommentTok{#layout(matrix(c(1,2,3,0),2,2),c(3,3),c(3,3))}
+\CommentTok{#xoffSet <- 0.05}
+\CommentTok{#yoffSet <- 0.03}
+\CommentTok{#par(mai = c(0.8,0.8,0.1,0.1), omi = c(0,0,0,0))}
+\KeywordTok{plot}\NormalTok{(pred_a, pred_SAR,}
+     \DataTypeTok{type =} \StringTok{"n"}\NormalTok{,  }\DataTypeTok{bty =} \StringTok{"L"}\NormalTok{,}
+     \DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(yp_min,yp_max),}
+     \DataTypeTok{xlab =} \StringTok{"Hatchery Chum SAR"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Process error"}\NormalTok{, }\DataTypeTok{main =} \StringTok{""}\NormalTok{,}
+     \DataTypeTok{cex.lab =} \FloatTok{1.2}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h =} \DecValTok{0}\NormalTok{, }\DataTypeTok{lty =} \StringTok{"dashed"}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(pred_a, pred_SAR, }\DataTypeTok{col =} \StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(innov_CI[}\DecValTok{2}\NormalTok{,]}\OperatorTok{~}\NormalTok{a,}\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{col =} \StringTok{"black"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{App_3_Summarize_results_files/figure-latex/fig_6_process_error_corr-1} \end{center}
+
+Figure 7. Linear relationships between estimated process errors, which
+represent the population's productivity after accounting for the effects
+of density dependence and environmental covariates, and additional
+potential explanetory variables.
+
+\subsection{Time-varying
+productivity}\label{time-varying-productivity-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pDat <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(mod_res[, }\KeywordTok{grep}\NormalTok{(}\StringTok{"ln_RS"}\NormalTok{, }\KeywordTok{colnames}\NormalTok{(mod_res))],}\DecValTok{2}\NormalTok{,quantile,CI_vec)}
+\NormalTok{ypMin <-}\StringTok{ }\KeywordTok{min}\NormalTok{(pDat)}
+\NormalTok{ypMax <-}\StringTok{ }\KeywordTok{max}\NormalTok{(pDat)}
+\NormalTok{t_idx_a <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(yr_frst, }\DataTypeTok{length.out =}\NormalTok{ n_yrs}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore)}
+
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mai=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.1}\NormalTok{), }\DataTypeTok{omi=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.2}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.2}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(t_idx_a,pDat[}\DecValTok{3}\NormalTok{,], }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(ypMin,ypMax), }\DataTypeTok{type=}\StringTok{"n"}\NormalTok{, }\CommentTok{#log="y",}
+     \DataTypeTok{xlab=}\StringTok{"Brood year"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"ln(R/S)"}\NormalTok{, }\DataTypeTok{main=}\StringTok{""}\NormalTok{, }\DataTypeTok{cex.lab=}\FloatTok{1.2}\NormalTok{)}
+\KeywordTok{polygon}\NormalTok{(}\KeywordTok{c}\NormalTok{(t_idx_a,}\KeywordTok{rev}\NormalTok{(t_idx_a)),}\KeywordTok{c}\NormalTok{(pDat[}\DecValTok{3}\NormalTok{,],}\KeywordTok{rev}\NormalTok{(pDat[}\DecValTok{1}\NormalTok{,])), }\DataTypeTok{col=}\NormalTok{clr, }\DataTypeTok{border=}\OtherTok{NA}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{h =} \DecValTok{0}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(t_idx_a, pDat[}\DecValTok{2}\NormalTok{,], }\DataTypeTok{col=}\StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{App_3_Summarize_results_files/figure-latex/plot_obsProd_over_time-1.pdf}
+
+Figure 8. Time series of the time-varying productivity, which includes
+the cumulative effects of the 2 covariates.
+
+\subsubsection{Recruits by age class}\label{recruits-by-age-class}
+
+Here are the estimated number of recruits by brood year and age. Note
+that the uncertainty increases in recent years as fewer complete age
+classes have been observed.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{CI_vec <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{0.05}\NormalTok{,}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.95}\NormalTok{)}
+\NormalTok{clr <-}\StringTok{ }\KeywordTok{rgb}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{255}\NormalTok{, }\DataTypeTok{alpha =} \DecValTok{50}\NormalTok{, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{)}
+
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(A,}\DecValTok{1}\NormalTok{), }\DataTypeTok{mai=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.15}\NormalTok{,}\FloatTok{0.05}\NormalTok{,}\FloatTok{0.1}\NormalTok{), }\DataTypeTok{omi=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\DecValTok{0}\NormalTok{))}
+\NormalTok{t_idx_R <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(yr_frst,}\DataTypeTok{length.out=}\NormalTok{ n_yrs}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore)}
+\NormalTok{pltTT <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\KeywordTok{min}\NormalTok{(}\KeywordTok{round}\NormalTok{(t_idx_R}\OperatorTok{/}\DecValTok{5}\NormalTok{,}\DecValTok{0}\NormalTok{)}\OperatorTok{*}\DecValTok{5}\NormalTok{),}\KeywordTok{max}\NormalTok{(}\KeywordTok{round}\NormalTok{(t_idx_R}\OperatorTok{/}\DecValTok{5}\NormalTok{,}\DecValTok{0}\NormalTok{)}\OperatorTok{*}\DecValTok{5}\NormalTok{),}\DecValTok{5}\NormalTok{)}
+\NormalTok{pDat_}\DecValTok{1}\NormalTok{ <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(mod_res[,}\DecValTok{2}\OperatorTok{:}\DecValTok{37}\NormalTok{],}\DecValTok{2}\NormalTok{,quantile,CI_vec)}\OperatorTok{/}\DecValTok{100}
+\NormalTok{pDat_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(mod_res[,}\DecValTok{38}\OperatorTok{:}\DecValTok{73}\NormalTok{],}\DecValTok{2}\NormalTok{,quantile,CI_vec)}\OperatorTok{/}\DecValTok{100}
+\NormalTok{pDat_}\DecValTok{3}\NormalTok{ <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(mod_res[,}\DecValTok{74}\OperatorTok{:}\DecValTok{109}\NormalTok{],}\DecValTok{2}\NormalTok{,quantile,CI_vec)}\OperatorTok{/}\DecValTok{100}
+
+\NormalTok{rec <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{age_3 =}\NormalTok{ (pDat_}\DecValTok{1}\NormalTok{[}\DecValTok{2}\NormalTok{,]),}\DataTypeTok{age_4 =}\NormalTok{ (pDat_}\DecValTok{2}\NormalTok{[}\DecValTok{2}\NormalTok{,]),}\DataTypeTok{age_5 =}\NormalTok{ (pDat_}\DecValTok{3}\NormalTok{[}\DecValTok{2}\NormalTok{,]))}
+
+
+\NormalTok{mat_prop <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(rec,}\DecValTok{1}\NormalTok{,}\ControlFlowTok{function}\NormalTok{(x)\{x}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(x)\})}
+
+\KeywordTok{matplot}\NormalTok{(mat_prop)}
+
+    \KeywordTok{plot}\NormalTok{(t_idx_R,pDat_}\DecValTok{1}\NormalTok{[}\DecValTok{3}\NormalTok{,], }\CommentTok{#ylim=c(0.001,ypMax),}
+         \DataTypeTok{type=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{xaxt=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{xlab=}\StringTok{""}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{""}\NormalTok{, }\DataTypeTok{main=}\StringTok{""}\NormalTok{, }\DataTypeTok{las=}\DecValTok{1}\NormalTok{)}
+    \KeywordTok{polygon}\NormalTok{(}\KeywordTok{c}\NormalTok{(t_idx_R,}\KeywordTok{rev}\NormalTok{(t_idx_R)),}\KeywordTok{c}\NormalTok{(pDat_}\DecValTok{1}\NormalTok{[}\DecValTok{3}\NormalTok{,],}\KeywordTok{rev}\NormalTok{(pDat_}\DecValTok{1}\NormalTok{[}\DecValTok{1}\NormalTok{,])), }\DataTypeTok{col=}\NormalTok{clr, }\DataTypeTok{border=}\OtherTok{NA}\NormalTok{)}
+    \KeywordTok{lines}\NormalTok{(t_idx_R, pDat_}\DecValTok{1}\NormalTok{[}\DecValTok{2}\NormalTok{,], }\DataTypeTok{col=}\StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\NormalTok{    aHt <-}\StringTok{ }\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{])}\OperatorTok{/}\DecValTok{7}
+\NormalTok{    ttl <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\StringTok{"Age-"}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DataTypeTok{sep=}\StringTok{""}\NormalTok{)}
+    \KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{.}\DecValTok{8}\NormalTok{,}
+       \DataTypeTok{y =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\FloatTok{0.1}\NormalTok{,}
+\NormalTok{       ttl,}
+       \DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+    \KeywordTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DataTypeTok{at=}\NormalTok{pltTT,}\DataTypeTok{labels=}\OtherTok{FALSE}\NormalTok{)}
+    
+\NormalTok{    ##}
+        \KeywordTok{plot}\NormalTok{(t_idx_R,pDat_}\DecValTok{2}\NormalTok{[}\DecValTok{3}\NormalTok{,], }\CommentTok{#ylim=c(0.001,ypMax),}
+         \DataTypeTok{type=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{xaxt=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{xlab=}\StringTok{""}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{""}\NormalTok{, }\DataTypeTok{main=}\StringTok{""}\NormalTok{, }\DataTypeTok{las=}\DecValTok{1}\NormalTok{)}
+    \KeywordTok{polygon}\NormalTok{(}\KeywordTok{c}\NormalTok{(t_idx_R,}\KeywordTok{rev}\NormalTok{(t_idx_R)),}\KeywordTok{c}\NormalTok{(pDat_}\DecValTok{2}\NormalTok{[}\DecValTok{3}\NormalTok{,],}\KeywordTok{rev}\NormalTok{(pDat_}\DecValTok{2}\NormalTok{[}\DecValTok{1}\NormalTok{,])), }\DataTypeTok{col=}\NormalTok{clr, }\DataTypeTok{border=}\OtherTok{NA}\NormalTok{)}
+    \KeywordTok{lines}\NormalTok{(t_idx_R, pDat_}\DecValTok{2}\NormalTok{[}\DecValTok{2}\NormalTok{,], }\DataTypeTok{col=}\StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\NormalTok{    aHt <-}\StringTok{ }\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{])}\OperatorTok{/}\DecValTok{7}
+\NormalTok{    ttl <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\StringTok{"Age-"}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DataTypeTok{sep=}\StringTok{""}\NormalTok{)}
+    \KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{.}\DecValTok{8}\NormalTok{,}
+       \DataTypeTok{y =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\FloatTok{0.1}\NormalTok{,}
+\NormalTok{       ttl,}
+       \DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+    \KeywordTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DataTypeTok{at=}\NormalTok{pltTT,}\DataTypeTok{labels=}\OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{App_3_Summarize_results_files/figure-latex/plot_recruits_by_age-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{        ##}
+        \KeywordTok{plot}\NormalTok{(t_idx_R,pDat_}\DecValTok{3}\NormalTok{[}\DecValTok{3}\NormalTok{,], }\CommentTok{#ylim=c(0.001,ypMax),}
+         \DataTypeTok{type=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{xaxt=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{xlab=}\StringTok{""}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{""}\NormalTok{, }\DataTypeTok{main=}\StringTok{""}\NormalTok{, }\DataTypeTok{las=}\DecValTok{1}\NormalTok{)}
+    \KeywordTok{polygon}\NormalTok{(}\KeywordTok{c}\NormalTok{(t_idx_R,}\KeywordTok{rev}\NormalTok{(t_idx_R)),}\KeywordTok{c}\NormalTok{(pDat_}\DecValTok{3}\NormalTok{[}\DecValTok{3}\NormalTok{,],}\KeywordTok{rev}\NormalTok{(pDat_}\DecValTok{3}\NormalTok{[}\DecValTok{1}\NormalTok{,])), }\DataTypeTok{col=}\NormalTok{clr, }\DataTypeTok{border=}\OtherTok{NA}\NormalTok{)}
+    \KeywordTok{lines}\NormalTok{(t_idx_R, pDat_}\DecValTok{3}\NormalTok{[}\DecValTok{2}\NormalTok{,], }\DataTypeTok{col=}\StringTok{"blue3"}\NormalTok{, }\DataTypeTok{lwd=}\DecValTok{2}\NormalTok{)}
+\NormalTok{    aHt <-}\StringTok{ }\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{-}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\NormalTok{])}\OperatorTok{/}\DecValTok{7}
+\NormalTok{    ttl <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\StringTok{"Age-"}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DataTypeTok{sep=}\StringTok{""}\NormalTok{)}
+    \KeywordTok{text}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{.}\DecValTok{8}\NormalTok{,}
+       \DataTypeTok{y =} \KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{] }\OperatorTok{-}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\FloatTok{0.1}\NormalTok{,}
+\NormalTok{       ttl,}
+       \DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+    \KeywordTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DataTypeTok{at=}\NormalTok{pltTT)}
+
+\KeywordTok{mtext}\NormalTok{(}\StringTok{"Recruits (100s)"}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DataTypeTok{line=}\FloatTok{2.5}\NormalTok{, }\DataTypeTok{outer=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{1.2}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{"Year"}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DataTypeTok{line=}\FloatTok{2.5}\NormalTok{, }\DataTypeTok{outer=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{1.2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{App_3_Summarize_results_files/figure-latex/plot_recruits_by_age-2.pdf}
+
+Figure 9. Time series of the estimated number of recruits by brood year
+and age.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mai=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.8}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.1}\NormalTok{), }\DataTypeTok{omi=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.2}\NormalTok{,}\FloatTok{0.2}\NormalTok{))}
+\NormalTok{clr <-}\StringTok{ }\KeywordTok{rgb}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{255}\NormalTok{, }\DataTypeTok{alpha =} \DecValTok{40}\NormalTok{, }\DataTypeTok{maxColorValue =} \DecValTok{255}\NormalTok{)}
+
+\NormalTok{t_idx_R <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(yr_frst,}\DataTypeTok{length.out=}\NormalTok{ n_yrs}\OperatorTok{-}\NormalTok{age_min}\OperatorTok{+}\NormalTok{n_fore)}
+\NormalTok{pltTT <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\KeywordTok{min}\NormalTok{(}\KeywordTok{round}\NormalTok{(t_idx_R}\OperatorTok{/}\DecValTok{5}\NormalTok{,}\DecValTok{0}\NormalTok{)}\OperatorTok{*}\DecValTok{5}\NormalTok{),}\KeywordTok{max}\NormalTok{(}\KeywordTok{round}\NormalTok{(t_idx_R}\OperatorTok{/}\DecValTok{5}\NormalTok{,}\DecValTok{0}\NormalTok{)}\OperatorTok{*}\DecValTok{5}\NormalTok{),}\DecValTok{5}\NormalTok{)}
+\NormalTok{pDat_}\DecValTok{1}\NormalTok{ <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(mod_res[,}\DecValTok{2}\OperatorTok{:}\DecValTok{37}\NormalTok{],}\DecValTok{2}\NormalTok{,quantile,CI_vec)}\OperatorTok{/}\DecValTok{100}
+\NormalTok{pDat_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(mod_res[,}\DecValTok{38}\OperatorTok{:}\DecValTok{73}\NormalTok{],}\DecValTok{2}\NormalTok{,quantile,CI_vec)}\OperatorTok{/}\DecValTok{100}
+\NormalTok{pDat_}\DecValTok{3}\NormalTok{ <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(mod_res[,}\DecValTok{74}\OperatorTok{:}\DecValTok{109}\NormalTok{],}\DecValTok{2}\NormalTok{,quantile,CI_vec)}\OperatorTok{/}\DecValTok{100}
+
+\NormalTok{rec <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{age_3 =}\NormalTok{ (pDat_}\DecValTok{1}\NormalTok{[}\DecValTok{2}\NormalTok{,]),}\DataTypeTok{age_4 =}\NormalTok{ (pDat_}\DecValTok{2}\NormalTok{[}\DecValTok{2}\NormalTok{,]),}\DataTypeTok{age_5 =}\NormalTok{ (pDat_}\DecValTok{3}\NormalTok{[}\DecValTok{2}\NormalTok{,]))}
+
+
+\NormalTok{mat_prop <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(rec,}\DecValTok{1}\NormalTok{,}\ControlFlowTok{function}\NormalTok{(x)\{x}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(x)\})}
+\NormalTok{age_est <-}\StringTok{ }\KeywordTok{t}\NormalTok{(}\KeywordTok{apply}\NormalTok{(mat_prop,}\DecValTok{2}\NormalTok{,cumsum))}
+
+\NormalTok{nRec <-}\StringTok{ }\NormalTok{n_yrs}\OperatorTok{-}\NormalTok{age_min}
+\KeywordTok{plot}\NormalTok{(t_idx_R, }\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{,nRec}\OperatorTok{+}\NormalTok{n_fore), }\DataTypeTok{ylab=}\StringTok{"Proportion"}\NormalTok{, }\DataTypeTok{xlab=}\StringTok{"Brood year"}\NormalTok{, }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{las=}\DecValTok{1}\NormalTok{,}
+     \DataTypeTok{xaxs=}\StringTok{"i"}\NormalTok{, }\DataTypeTok{yaxs=}\StringTok{"i"}\NormalTok{, }\DataTypeTok{type=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{lty=}\StringTok{"solid"}\NormalTok{, }\DataTypeTok{col=}\StringTok{"blue3"}\NormalTok{, }\DataTypeTok{cex.lab=}\FloatTok{1.2}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{)) \{}
+    \KeywordTok{polygon}\NormalTok{(}\KeywordTok{c}\NormalTok{(t_idx_R,}\KeywordTok{rev}\NormalTok{(t_idx_R)),}\KeywordTok{c}\NormalTok{(age_est[,i],}\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,nRec}\OperatorTok{+}\NormalTok{n_fore)), }\DataTypeTok{col=}\NormalTok{clr, }\DataTypeTok{border=}\OtherTok{NA}\NormalTok{)}
+\NormalTok{    \}}
+\NormalTok{lbl <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,age_est[nRec}\OperatorTok{+}\NormalTok{n_fore,}\OperatorTok{-}\NormalTok{A]),age_est[nRec}\OperatorTok{+}\NormalTok{n_fore,]),}\DecValTok{1}\NormalTok{,mean)}
+\KeywordTok{text}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{],}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{4}\NormalTok{]}\OperatorTok{*}\FloatTok{1.05}\NormalTok{,}\StringTok{"Age"}\NormalTok{, }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{, }\DataTypeTok{pos=}\DecValTok{4}\NormalTok{, }\DataTypeTok{offset=}\FloatTok{0.05}\NormalTok{, }\DataTypeTok{col=}\StringTok{"black"}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.8}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\KeywordTok{par}\NormalTok{()}\OperatorTok{$}\NormalTok{usr[}\DecValTok{2}\NormalTok{],lbl[}\DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{],}\KeywordTok{seq}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{), }\DataTypeTok{xpd=}\OtherTok{NA}\NormalTok{, }\DataTypeTok{pos=}\DecValTok{4}\NormalTok{, }\DataTypeTok{col=}\StringTok{"black"}\NormalTok{, }\DataTypeTok{cex=}\FloatTok{0.7}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{App_3_Summarize_results_files/figure-latex/plot_age_comp-1.pdf}
+
+
+\end{document}
