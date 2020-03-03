@@ -942,8 +942,6 @@ rec <- data.frame(age_3 = (pDat_1[2,]),age_4 = (pDat_2[2,]),age_5 = (pDat_3[2,])
 
 mat_prop <- apply(rec,1,function(x){x/sum(x)})
 
-matplot(mat_prop)
-
 	plot(t_idx_R,pDat_1[3,], #ylim=c(0.001,ypMax),
 	     type="n", xaxt="n", xlab="", ylab="", main="", las=1)
 	polygon(c(t_idx_R,rev(t_idx_R)),c(pDat_1[3,],rev(pDat_1[1,])), col=clr, border=NA)

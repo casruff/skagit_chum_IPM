@@ -129,7 +129,7 @@
 }
 \vspace{0.2in}
 
-This is version 0.19.12.02.
+This is version 0.20.03.03.
 
 \section{Background}\label{background}
 
@@ -977,8 +977,6 @@ classes have been observed.
 
 \NormalTok{mat_prop <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(rec,}\DecValTok{1}\NormalTok{,}\ControlFlowTok{function}\NormalTok{(x)\{x}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(x)\})}
 
-\KeywordTok{matplot}\NormalTok{(mat_prop)}
-
     \KeywordTok{plot}\NormalTok{(t_idx_R,pDat_}\DecValTok{1}\NormalTok{[}\DecValTok{3}\NormalTok{,], }\CommentTok{#ylim=c(0.001,ypMax),}
          \DataTypeTok{type=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{xaxt=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{xlab=}\StringTok{""}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{""}\NormalTok{, }\DataTypeTok{main=}\StringTok{""}\NormalTok{, }\DataTypeTok{las=}\DecValTok{1}\NormalTok{)}
     \KeywordTok{polygon}\NormalTok{(}\KeywordTok{c}\NormalTok{(t_idx_R,}\KeywordTok{rev}\NormalTok{(t_idx_R)),}\KeywordTok{c}\NormalTok{(pDat_}\DecValTok{1}\NormalTok{[}\DecValTok{3}\NormalTok{,],}\KeywordTok{rev}\NormalTok{(pDat_}\DecValTok{1}\NormalTok{[}\DecValTok{1}\NormalTok{,])), }\DataTypeTok{col=}\NormalTok{clr, }\DataTypeTok{border=}\OtherTok{NA}\NormalTok{)}
@@ -1003,13 +1001,7 @@ classes have been observed.
 \NormalTok{       ttl,}
        \DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
     \KeywordTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DataTypeTok{at=}\NormalTok{pltTT,}\DataTypeTok{labels=}\OtherTok{FALSE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{App_3_Summarize_results_files/figure-latex/plot_recruits_by_age-1.pdf}
-
-\begin{Shaded}
-\begin{Highlighting}[]
+    
 \NormalTok{        ##}
         \KeywordTok{plot}\NormalTok{(t_idx_R,pDat_}\DecValTok{3}\NormalTok{[}\DecValTok{3}\NormalTok{,], }\CommentTok{#ylim=c(0.001,ypMax),}
          \DataTypeTok{type=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{xaxt=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{xlab=}\StringTok{""}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{""}\NormalTok{, }\DataTypeTok{main=}\StringTok{""}\NormalTok{, }\DataTypeTok{las=}\DecValTok{1}\NormalTok{)}
@@ -1028,7 +1020,7 @@ classes have been observed.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{App_3_Summarize_results_files/figure-latex/plot_recruits_by_age-2.pdf}
+\includegraphics{App_3_Summarize_results_files/figure-latex/plot_recruits_by_age-1.pdf}
 
 Figure 9. Time series of the estimated number of recruits by brood year
 and age.
