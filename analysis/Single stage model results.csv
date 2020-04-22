@@ -1,6 +1,6 @@
 model,covar,looic,se_looic,elpd_loo,se_elpd_loo,p_loo,se_p_loo
 B-H,flow_spr+NPGO+whidbey_basin_pink_escapement,692.05,64.48,-346.02,32.24,79.93,4.77
-Linear,NA,693.56,64.39,-346.78,32.19,75.26,5.25
+Linear,NA,693.03,64.29,-346.52,32.14,74.9,5.24
 B-H,flow_wtr+flow_spr+NPGO+whidbey_basin_pink_escapement,693.89,64.29,-346.95,32.14,79.29,4.9
 B-H,flow_spr+whidbey_basin_pink_escapement,695.27,63.43,-347.64,31.72,77.09,4.83
 B-H,flow_wtr+NPGO+whidbey_basin_pink_escapement,695.45,64.14,-347.73,32.07,79.6,4.89

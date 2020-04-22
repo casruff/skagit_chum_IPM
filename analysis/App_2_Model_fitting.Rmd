@@ -229,8 +229,6 @@ model {
   mu_a <- log(a);
   E_a <- mu_a + sigma_r/(2 - 2*phi^2);
   
-  ## b = slope or effect size of spawners
-  b ~ dnorm(0, 1e-6) T(0,);
 
   ## AR(1) coef for proc errors
   phi ~ dunif(-0.999,0.999);
@@ -280,8 +278,8 @@ model {
   ##------------
   ## 1st brood yr requires different innovation
   ## predicted recruits in BY t
-  #ln_a[1] <- mu_a;
-  E_ln_Rec[1] <- log(a + Sp[1]*b) + phi*innov_1;
+  ln_a[1] <- mu_a;
+  E_ln_Rec[1] <- ln_a[1] + ln_Sp[1] + phi*innov_1;
   tot_ln_Rec[1] ~ dnorm(E_ln_Rec[1],tau_r);
   res_ln_Rec[1] <- tot_ln_Rec[1] - E_ln_Rec[1];
   ## median of total recruits
@@ -298,8 +296,8 @@ model {
   ## brood years 2:(n_yrs-age_min)
   for(t in 2:(n_yrs-age_min+n_fore)) {
     ## predicted recruits in BY t
-    #ln_a[t] <- mu_a; 
-    E_ln_Rec[t] <- log(a + Sp[t]*b) + phi*res_ln_Rec[t-1];
+    ln_a[t] <- mu_a; 
+    E_ln_Rec[t] <- ln_a[t] + ln_Sp[t] + phi*res_ln_Rec[t-1];
     tot_ln_Rec[t] ~ dnorm(E_ln_Rec[t],tau_r);
     res_ln_Rec[t] <- tot_ln_Rec[t] - E_ln_Rec[t];
     ## median of total recruits
@@ -1463,7 +1461,6 @@ cnt <- 1
 ```{r fit_DI_base_show, eval = FALSE, warning = FALSE, cache = FALSE}
 ## params/states to return
 par_jags <- c("a",
-              "b",
               "Sp","Rec","tot_ln_Rec","ln_RS",
               "pi_eta","pi_tau",
               "sigma_r","sigma_s","res_ln_Rec",
@@ -1475,7 +1472,6 @@ mod_fits[[cnt]] <- fit_jags("IPM_DI_AR.txt", dat_jags, par_jags, init_vals_DI, m
 ```{r fit_DI_base, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
 ## params/states to return
 par_jags <- c("a",
-              "b",
               "Sp","Rec","tot_ln_Rec","ln_RS",
               "pi_eta","pi_tau",
               "sigma_r","sigma_s","res_ln_Rec",
@@ -1494,7 +1490,7 @@ if(file.exists(file.path(savedir, "fit_di_base.rds"))) {
 #### Convergence checks
 
 ```{r diag_DI}
-par_conv <- c("a", "b",
+par_conv <- c("a",
               "sigma_r", "sigma_s",
               "pi_tau", paste0("pi_eta[",seq(A-1),"]"))
 
